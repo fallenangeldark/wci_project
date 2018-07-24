@@ -16,12 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
-from mainapp_ru.views import Main_ru as mainapp_ru
+import mainapp_ru.views as mainapp_ru
 from django.views.generic.base import RedirectView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', RedirectView.as_view(url='/ru')),
     path('ru/', include(('mainapp_ru.urls', mainapp_ru), namespace='mainapp_ru')),
-    path('', RedirectView.as_view(url='http://localhost:8000/ru')),
 ]

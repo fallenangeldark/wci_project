@@ -6,9 +6,12 @@
     font-size: 0.99em;
     color: #222;
 }
+html, body {
+    height: 100%;
+}
 
 .header {
-    width:100%
+    width: auto;
     height: 2em;
     background-color: #22f;
     padding: 0.5em;
@@ -56,7 +59,7 @@
     margin-bottom: 1.3em;
 }
 
-.content {
+.content p{
     text-indent: 2em;
     text-align: justify;
     padding: 2%;
@@ -76,21 +79,34 @@ span.review {
 .review-content {
     color: #444;
 	font-size: .75em;
-    margin:0 10em;
-    padding: 0.5em 1em;
+    margin:0 15em;
+    padding: 0.5em 1em 3em 1em;
     text-align: justify;
+    box-sizing: border-box;
+    min-height: 100%;
+
 }
 .wrapper{
-    #height: 90%
+    position: relative;
+    min-height: 100%
+}
+div.footer {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1em;
+    border-top: 1px solid #666;
 }
 .footer p{
     background-color: #222;
-    display: block;
     height:1em;
     text-align: right;
     padding: 1em;
     color: #777;
     font-size: .8em;
+
 }
 
 #720x1280 - mobile
