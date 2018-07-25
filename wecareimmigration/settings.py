@@ -76,12 +76,12 @@ WSGI_APPLICATION = 'wecareimmigration.wsgi.application'
 
 DATABASES = {
     'default': {
-    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': 'wecareimm',
-	'USER': 'balaba',
-	'PASSWORD': 'datawith1balaba',
-	'HOST': 'localhost',
-	'PORT': '',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'wecareimm',
+    	'USER': 'balaba',
+    	'PASSWORD': 'datawith1balaba',
+    	'HOST': 'localhost',
+    	'PORT': '',
     }
 }
 
