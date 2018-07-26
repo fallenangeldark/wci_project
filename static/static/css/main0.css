@@ -45,65 +45,43 @@ html, body {
     width: auto;
     height: 10em;
 }
-nav {
-    margin: 0 0 1em 0;
-    width: 100%;
-    background-color: #E64A19;
-    display: inline-block;
-}
-
-/* убираем отступы и поля, а также list-style для "ul",
- * и добавляем "position:relative" */
-nav ul {
-    padding:0;
-    margin:0 auto;
-    list-style: none;
+.menu {
     position: relative;
-    background-color: #E64A19;
-    }
-
-/* применяем inline-block позиционирование к элементам навигации */
-nav ul li {
-    margin: 0px -7px 0 0;
-    display:inline-block;
-    background-color: #E64A19;
-    }
-
-/* стилизуем ссылки */
-nav a {
-    display:block;
-    padding:0 10px;
-    background-color: #E64A19;
-    color:#fff;
-    font-size:0.99em;
-    line-height: 3.7em;
-    text-decoration:none;
+	list-style-type: none;
+	margin: .7em 3em 1em 2em;
+	float: right;
 }
-
-/* изменяем цвет фона при наведении курсора */
-nav a:hover {
-    background-color: #000000;
+.menu li {
+	float: left;
 }
-/* скрываем выпадающие списки по умолчанию
-             * и задаем абсолютное позиционирование */
-nav ul ul {
+ul ul {
     display: none;
     position: absolute;
     top: 100%;
 }
-
-/* отображаем выпадающий список при наведении */
-nav ul li:hover > ul {
+ul li:hover > ul {
     display:inherit;
 }
-
-/* первый уровень выпадающего списка */
-nav ul ul li {
-    min-width:90%;
+ul ul li {
+    min-width:10em;
     float:none;
     display:list-item;
     position: relative;
 }
+.menu a {
+	color: #8c8c8c;
+	font-size: .85em;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: .7em .7em .4em .7em;
+    border-bottom: none;
+    text-decoration: none;
+}
+.menu a:hover{
+    color: #aa2222;
+    border-bottom: solid #a22 .2em;
+}
+
 
 .clr {
     clear: both;

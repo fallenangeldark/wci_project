@@ -26,6 +26,25 @@ class Immigration_ru(Main_ru):
         context['title'] = 'Иммиграция'
         return context
 
+class Immigration_pro_ru(Main_ru):
+    template_name = 'mainapp_ru/immigration_pro.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(Main_ru, self).get_context_data(**kwargs)
+        context['home_ru'] = InnerHomeRu.objects.all()[3]
+        context['title'] = 'Для Профессионалов'
+        return context
+
+class Immigration_business_ru(Main_ru):
+    template_name = 'mainapp_ru/immigration_business.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(Main_ru, self).get_context_data(**kwargs)
+        context['home_ru'] = InnerHomeRu.objects.all()[0]
+        context['title'] = 'Для бизнеса'
+        return context
+
+
 class Visit_ru(Main_ru):
     template_name = 'mainapp_ru/visit.html'
 
@@ -52,6 +71,7 @@ class About_ru(Main_ru):
         context['home_ru'] = HomeRu.objects.all()[4]
         context['title'] = 'О проекте'
         return context
+
 
 # class Professionals_ru(InnerHomeRu):
 #     model = InnerHomeRu

@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 import mainapp_ru.views as mainapp_ru
+import mainapp_en.views as mainapp_en
 from django.views.generic.base import RedirectView
 
 
@@ -24,4 +25,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', RedirectView.as_view(url='/ru')),
     path('ru/', include(('mainapp_ru.urls', mainapp_ru), namespace='mainapp_ru')),
+    path('en/', include(('mainapp_en.urls', mainapp_en), namespace='mainapp_en')),
 ]

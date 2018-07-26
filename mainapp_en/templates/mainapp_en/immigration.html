@@ -1,0 +1,19 @@
+{% extends 'mainapp_en/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+  {{title}}
+{% endblock %}
+
+{% block content %}
+<article class="content">
+  <h1 class="heading">{{home_en.h1}}</h1>
+  <p class="content-inner">{{home_en.paragraph1}}</p>
+  <p class="content-inner">{{home_en.paragraph2}}</p>
+  <p class="content-inner">{{home_en.paragraph3}}</p>
+  <p class="content-inner">{{home_en.paragraph4}}</p>
+</article>
+  <div class="request-info">
+    Запросить дополнительную информацию
+  </div>
+{% endblock %}

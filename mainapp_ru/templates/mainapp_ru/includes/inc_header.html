@@ -1,12 +1,22 @@
+{% load staticfiles %}
 <header class="header">
     Контакты
     <div class="search-info">Поиск</div>
+    <span class='lang-change'><a href="javascript:void(0);" onClick="javascript:getLang_ru();">Ru</a></span>
+    <span class='lang-change'><a href="javascript:void(0);" onClick="javascript:getLang_en();">En</a></span>
 </header>
 <div class="banner">баннер и нах он тут нужен?</div>
-<ul class="menu">
+<nav>
+  <ul class="menu">
     <li><a href="{% url 'mainapp_ru:home' %}">Образование и учеба</a></li>
-    <li><a href="{% url 'mainapp_ru:immigration' %}">Иммиграция</a></li>
+    <li><a href="{% url 'mainapp_ru:immigration' %}">Иммиграция</a>
+      <ul>
+        <li><a href="#">Иммиграция</a></li>
+        <li><a href="#">Иммиграция</a></li>
+      </ul>
+    </li>
     <li><a href="{% url 'mainapp_ru:visit' %}">Посещение Канады</a></li>
     <li><a href="{% url 'mainapp_ru:life' %}">Жизнь в Канаде</a></li>
     <li><a href="{% url 'mainapp_ru:about' %}">Информация о проекте</a></li>
-</ul>
+  </ul>
+</nav>
