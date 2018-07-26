@@ -15,7 +15,6 @@ class Main_ru(TemplateView):
         context = super(Main_ru, self).get_context_data(**kwargs)
         context['home_ru'] = HomeRu.objects.all()[0]
         context['title'] = 'Главная'
-        print(self.id)
         return context
 
 class Immigration_ru(Main_ru):
@@ -54,16 +53,16 @@ class About_ru(Main_ru):
         context['title'] = 'О проекте'
         return context
 
-class Professionals_ru(InnerHomeRu):
-    model = InnerHomeRu
-    template_name = 'mainapp_ru/professionals.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(Professionals_ru, self).get_context_data(**kwargs)
-        context['outer_rel'] = InnerHomeRu.objects.filter(outer_relation__id=id)
-        context['home_ru'] = InnerHomeRu.objects.all()[0]
-        context['title'] = 'Для специалистов'
-        return context
+# class Professionals_ru(InnerHomeRu):
+#     model = InnerHomeRu
+#     template_name = 'mainapp_ru/professionals.html'
+#
+#     def get_context_data(self, **kwargs):
+#         context = super(Professionals_ru, self).get_context_data(**kwargs)
+#         context['outer_rel'] = InnerHomeRu.objects.filter(outer_relation__id=id)
+#         context['home_ru'] = InnerHomeRu.objects.all()[0]
+#         context['title'] = 'Для специалистов'
+#         return context
 
 def home_view(request):
     return redirect('/ru')
