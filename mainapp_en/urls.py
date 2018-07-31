@@ -10,4 +10,5 @@ urlpatterns =[
     path('visit/', mainapp_en.Visit_en.as_view(), name='visit'),
     path('life/', mainapp_en.Life_en.as_view(), name='life'),
     path('about/', mainapp_en.About_en.as_view(), name='about'),
+    path('form/', mainapp_en.ClientAssesment_en.as_view(), name='form'),
 ]
