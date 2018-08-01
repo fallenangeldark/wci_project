@@ -1,10 +1,19 @@
-{% extends 'mainapp_en/base.html' %}
+{% extends 'mainapp_en/base0.html' %}
 {% load staticfiles %}
 
 {% block title %}
   {{title}}
 {% endblock %}
+{% block left-side %}
+  <h2>In this section</h2>
+  <ul>
 
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+
+  </ul>
+{% endblock %}
 {% block content %}
 <article class="content">
   <h1 class="heading">{{home_en.h1}}</h1>

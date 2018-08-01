@@ -8,16 +8,11 @@
 <div class="banner">banner</div>
 <nav>
   <ul class="menu">
-    <li><a href="{% url 'mainapp_en:home' %}">Education</a></li>
-    <li><a href="{% url 'mainapp_en:immigration' %}">Immigration</a>
-      <ul>
-        <li><a href="#">For B</a></li>
-        <li><a href="#">For P</a></li>
-      </ul>
-    </li>
-    <li><a href="{% url 'mainapp_en:visit' %}">Visit to Canada</a></li>
-    <li><a href="{% url 'mainapp_en:life' %}">Life in Canada</a></li>
-    <li><a href="{% url 'mainapp_en:about' %}">About us</a></li>
-    <li><a href="{% url 'mainapp_en:form' %}">Client Assessment Form</a></li>
+    <li><a href="{% url 'mainapp_en:home' %}" class="{% if 'education' in request.get_full_path %}active{% endif %} %}">Education</a></li>
+    <li><a href="{% url 'mainapp_en:immigration' %}" class="{% if 'immigration' in request.get_full_path %}active{% endif %}">Immigration</a></li>
+    <li><a href="{% url 'mainapp_en:visit' %}" class="{% if 'visit' in request.get_full_path %}active{% endif %}">Visit to Canada</a></li>
+    <li><a href="{% url 'mainapp_en:life' %}" class="{% if 'life' in request.get_full_path %}active{% endif %}">Life in Canada</a></li>
+    <li><a href="{% url 'mainapp_en:about' %}" class="{% if 'about' in request.get_full_path %}active{% endif %}">About us</a></li>
+    <li><a href="{% url 'mainapp_en:form'  %}" class="{% if 'form' in request.get_full_path %}active{% endif %}">Client Assessment Form</a></li>
   </ul>
 </nav>

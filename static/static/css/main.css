@@ -48,70 +48,72 @@ html, body {
 nav {
     margin: 0 0 1em 0;
     width: 100%;
-    background-color: #E64A19;
     display: inline-block;
 }
 
-/* убираем отступы и поля, а также list-style для "ul",
- * и добавляем "position:relative" */
-nav ul {
-    padding:0;
-    margin:0 auto;
-    list-style: none;
-    position: relative;
-    background-color: #E64A19;
-    }
+nav ul{
+    float:right;
+    padding-right: 8%;
 
-/* применяем inline-block позиционирование к элементам навигации */
+}
+
 nav ul li {
-    margin: 0px -7px 0 0;
+    margin: .6em -7px 0 0;
     display:inline-block;
-    background-color: #E64A19;
     }
 
 /* стилизуем ссылки */
-nav a {
-    display:block;
-    padding:0 10px;
-    background-color: #E64A19;
-    color:#fff;
-    font-size:0.99em;
-    line-height: 3.7em;
-    text-decoration:none;
+nav ul li a {
+    color: #8c8c8c;
+	font-size: 14px;
+	font-weight: 700;
+	text-align: right;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 10px 13px;
+}
+nav ul li .active {
+	color: #922;
+	font-weight: 700;
+	border-bottom: 3px solid #922;
 }
 
-/* изменяем цвет фона при наведении курсора */
 nav a:hover {
-    background-color: #000000;
+    color: #922;
+	font-weight: 700;
+	border-bottom: 2px solid #922;
 }
-/* скрываем выпадающие списки по умолчанию
-             * и задаем абсолютное позиционирование */
-nav ul ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-}
-
-/* отображаем выпадающий список при наведении */
-nav ul li:hover > ul {
-    display:inherit;
-}
-
-/* первый уровень выпадающего списка */
-nav ul ul li {
-    min-width:90%;
-    float:none;
-    display:list-item;
-    position: relative;
+nav ul li a:active {
+	color: #8c8c8c;
+	font-weight: 700;
+	border-bottom: 3px solid #8c8c8c;
 }
 
 .clr {
     clear: both;
 }
+.left-side{
+    width: 30%;
+    background-color: #000;
+    display: block;
+    float: left;
 
+    /* border: 2px solid #000; */
+}
+.left-side ul {
+    list-style: none;
+}
+.left-side ul li a{
+    text-decoration: none;
+}
+.right-side{
+    float:right;
+    width: 70%;
+}
 .content-box {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 8%;
+    margin-right: 15%;
+    float: left;
 }
 .content h1 {
     text-indent: 2em;
