@@ -1,150 +1,46 @@
 {% extends 'mainapp_en/base.html' %}
+{% load staticfiles %}
 {% block title %}
   {{title}}
 {% endblock %}
+{% block css %}
+  <link rel="stylesheet" href="{% static "css/main.css" %}">
+{% endblock %}
+{% block js %}
+  <script type="text/javascript" src={% static "/js/langChange.js" %}></script>
+  <script type="text/javascript" src={% static "/js/formjs.js" %}></script>
+{% endblock %}
 {% block content %}
-<form method="post" action="">
+<h1 class='form-h1'>Clien Assesment Form</h1>
+<hr>
+<p class='form-p'>Fill out this form to find out if you're qualified to immigrate to Canada</p>
+<form method="post" action="" id="clientForm">
   {% csrf_token %}
-  <ul>
-    <!-- {% if formset.name %}
-      {{formset.name.label_tag}}<br>
-      {{formset.name}}<br>
-    {% endif %}
-    {% if formset.travel_doc_name %}
-      {{formset.travel_doc_name.label_tag}}<br>
-      {{formset.travel_doc_name}}<br>
-    {% endif %}
-    {% if formset.email %}
-      {{formset.email.label_tag}}<br>
-      {{formset.email}}<br>
-    {% endif %}
-    {% if formset.address %}
-      {{formset.address.label_tag}}<br>
-      {{formset.address}}<br>
-    {% endif %}
-    {% if formset.contact_number %}
-      {{formset.contact_number.label_tag}}<br>
-      {{formset.contact_number}}<br>
-    {% endif %}
-    {% if formset.marital_status %}
-      {{formset.marital_status.label_tag}}<br>
-      {{formset.marital_status}}<br>
-    {% endif %}
-    {% if formset.dob %}
-      {{formset.dob.label_tag}}<br>
-      {{formset.dob}}<br>
-    {% endif %}
-    {% if formset.immigration_status %}
-      {{formset.immigration_status.label_tag}}<br>
-      {{formset.immigration_status}}<br>
-    {% endif %}
-    {% if formset.edu_level %}
-      {{formset.edu_level.label_tag}}<br>
-      {{formset.edu_level}}<br>
-    {% endif %}
-    {% if formset.canadian_dipl %}
-      {{formset.canadian_dipl.label_tag}}<br>
-      {{formset.canadian_dipl}}<br>
-    {% endif %}
-    {% if formset.school_progr_name %}
-      {{formset.school_progr_name.label_tag}}<br>
-      {{formset.school_progr_name}}<br>
-    {% endif %}
-    {% if formset.off_lang_en %}
-      {{formset.off_lang_en.label_tag}}<br>
-      {{formset.off_lang_en}}<br>
-    {% endif %}
-    {% if formset.off_lang_fr %}
-      {{formset.off_lang_fr.label_tag}}<br>
-      {{formset.off_lang_fr}}<br>
-    {% endif %}
-    {% if formset.work_exp_canada %}
-      {{formset.work_exp_canada.label_tag}}<br>
-      {{formset.work_exp_canada}}<br>
-    {% endif %}
-    {% if formset.work_exp_home %}
-      {{formset.work_exp_home.label_tag}}<br>
-      {{formset.work_exp_home}}<br>
-    {% endif %}
-    {% if formset.canadian_cert %}
-      {{formset.canadian_cert.label_tag}}<br>
-      {{formset.canadian_cert}}<br>
-    {% endif %}
-    {% if formset.valid_job %}
-      {{formset.valid_job.label_tag}}<br>
-      {{formset.valid_job}}<br>
-    {% endif %}
-    {% if formset.nomin_cert %}
-      {{formset.nomin_cert.label_tag}}<br>
-      {{formset.nomin_cert}}<br>
-    {% endif %}
-    {% if formset.partner_status_of_canada %}
-      {{formset.partner_status_of_canada.label_tag}}<br>
-      {{formset.partner_status_of_canada}}<br>
-    {% endif %}
-    {% if formset.partner_track %}
-      {{formset.partner_track.label_tag}}<br>
-      {{formset.partner_track}}<br>
-    {% endif %}
-    {% if formset.partner_edu %}
-      {{formset.partner_edu.label_tag}}<br>
-      {{formset.partner_edu}}<br>
-    {% endif %}
-    {% if formset.partner_work_exp %}
-      {{formset.partner_work_exp.label_tag}}<br>
-      {{formset.partner_work_exp}}<br>
-    {% endif %}
-    {% if formset.partner_lang %}
-      {{formset.partner_lang.label_tag}}<br>
-      {{formset.partner_lang}}<br>
-    {% endif %}
-    {% if formset.sibling_in_canada %}
-      {{formset.sibling_in_canada.label_tag}}<br>
-      {{formset.sibling_in_canada}}<br>
-    {% endif %}
-    {% if formset.memo %}
-      {{formset.memo.label_tag}}<br>
-      {{formset.memo}}<br>
-    {% endif %} -->
-    {{formset.as_p}}
-</ul>
+  <div>
+
+    {% for form in formset %}
+        {{form.errors}}
+        {{form.label_tag}}<br>
+        {{form}}
+    {% endfor %}
+</div>
 <button type="submit" name="button">Send</button>
 </form>
 {% endblock %}
 {% block review %}
+<script type="text/javascript">
+  var getform = document.getElementById('clientForm');
+  var el = getform.getElementsByTagName('select');
+  for (var i = 0; i < el.length; i++) {
+    el[i].setAttribute('onChange',"borderChange(this)");
+    el[i][0].setAttribute('disabled','disabled');
+    el[i].style.border = '1px solid #ccc';
+  };
+</script>
 
+<script type="text/javascript">
+function borderChange(e){
+  e.style.border = '1px solid #3b3';
+}
+</script>
 {% endblock %}
-<!-- <p><label for="{{form.id_for_label}}">{{form.label}}</label><br></p>
-<ul class='radio'>
-<li>
-<label for="{{form.id_for_label}}"><input name="{{form.name}}" value="Y" required="" class="radio-li" checked="" type="radio">
-Yes</label>
-</li>
-<li>
-<label for="{{form.id_for_label}}"><input name="{{form.name}}" value="N" required="" class="radio-li" type="radio" checked='True'>
-No</label>
-</li>
-</ul> -->
-<!-- //ALL positions -->
-<!-- //
-id_name, id_travel_doc_name, id_email, id_address, id_contact_number, id_marital_status, id_nationality, id_dob, id_immigration_status, id_edu_level, id_canadian_dipl, id_school_progr_name, id_off_lang_en, id_off_lang_fr, id_work_exp_canada, id_work_exp_home, id_canadian_cert, id_valid_job, id_nomin_cert, id_partner_status_of_canada, id_partner_track, id_partner_edu, id_partner_work_exp, id_partner_lang, id_sibling_in_canada, id_memo
-
-
-
-<p><label for="id_partner_status_of_canada">If you are married, is your spouse or common-law partner a citizen or permanent resident of Canada? :</label> <input name="partner_status_of_canada" id="id_partner_status_of_canada" type="checkbox"></p>
-
-// -->
-<!-- <p><label for="id_partner_edu"> What is the highest level of education for which your spouse or common-law partner's has:</label> <select name="partner_edu" required="" id="id_partner_edu">
-  <option value="" selected="">---------</option>
-
-  <option value="1">None, or less then secondary (high school)</option>
-
-  <option value="2">Secondary diploma (High school Diploma)</option>
-
-  <option value="3">One-year program at a university, college, trade or technical school, or other institute</option>
-
-  <option value="4">Two-year program at a university, college, trade or technical school, or other institute</option>
-//
-<p><label for="id_address">Address:</label> <input name="address" id="id_address" maxlength="50" type="text"></p>
-//
-<p><label for="id_travel_doc_name"></label>{{form_.label}}<textarea name="{{form_.name}}" maxlength="40" cols="40" required="" rows="2" id="id_travel_doc_name"></textarea></p> -->

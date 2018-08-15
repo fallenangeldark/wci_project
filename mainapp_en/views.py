@@ -88,15 +88,16 @@ class ClientAssesment_en(View):
         if formset.is_valid():
             formset.save()
             print('THIS IS SAVE')
-            return HttpResponseRedirect('/en/')
+            return HttpResponseRedirect('/en/education')
         else :
             print('THIS IS NOT SAVE')
-            return render(request, self.template_name, {'formset': formset, 'title': 'Form'})
+            return render(request, self.template_name, {'formset': formset, 'title': 'Form', 'tuple_input': self.tuple_input, 'tuple_area': self.tuple_area, 'tuple_radio': self.tuple_radio,
+            't_else': self.t_else, 'title': 'Form'})
 
     def get(self, request, *args, **kwargs):
         formset = self.form_class(initial=self.initial)
         return render(request, self.template_name, {'formset': formset, 'title': 'Form', 'tuple_input': self.tuple_input, 'tuple_area': self.tuple_area, 'tuple_radio': self.tuple_radio,
-        't_else': self.t_else,
+        't_else': self.t_else, 'title': 'Form',
         })
 
 def home_view_en(request):

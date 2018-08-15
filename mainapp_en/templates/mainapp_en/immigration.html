@@ -4,6 +4,10 @@
 {% block title %}
   {{title}}
 {% endblock %}
+{% block css %}
+  <link rel="stylesheet" href="{% static "css/main.css" %}">
+  <link rel="stylesheet" href="{% static "css/twosides.css" %}">
+{% endblock %}
 {% block left-side %}
   <h2>In this section</h2>
   <ul>

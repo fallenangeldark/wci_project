@@ -19,11 +19,18 @@
   <div class="wrapper">
     {% include "mainapp_ru/includes/inc_header.html" %}
     <div class="clr"></div>
-    
     <div class="content-box">
+      <div class="left-side">
+        {% block left-side %}
+
+        {% endblock %}
+      </div>
+      <div class="right-side">
+
       {% block content %}
 
       {% endblock %}
+    </div>
 
     </div>
 

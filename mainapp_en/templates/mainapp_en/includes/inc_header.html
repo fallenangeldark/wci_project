@@ -2,10 +2,10 @@
 <header class="header">
     Contacts
     <div class="search-info">search</div>
-    <span class='lang-change'><a href="javascript:void(0);" onClick="javascript:getLang_ru();">Ru</a></span>
-    <span class='lang-change'><a href="javascript:void(0);" onClick="javascript:getLang_en();">En</a></span>
+    <span class="lang last {% if '/ru/' in request.get_full_path %}active_lang{% endif %}"><a href="javascript:void(0);" onClick="javascript:getLang_ru();">Ru</a></span>
+    <span class="lang first {% if '/en/' in request.get_full_path %}active_lang{% endif %}"><a href="javascript:void(0);" onClick="javascript:getLang_en();">En</a></span>
 </header>
-<div class="banner">banner</div>
+<div class="banner"></div>
 <nav>
   <ul class="menu">
     <li><a href="{% url 'mainapp_en:home' %}" class="{% if 'education' in request.get_full_path %}active{% endif %} %}">Education</a></li>

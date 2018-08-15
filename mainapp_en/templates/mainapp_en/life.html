@@ -1,10 +1,13 @@
-{% extends 'mainapp_en/base.html' %}
+{% extends 'mainapp_en/base0.html' %}
 {% load staticfiles %}
 
 {% block title %}
   {{title}}
 {% endblock %}
-
+{% block css %}
+  <link rel="stylesheet" href="{% static "css/main.css" %}">
+  <link rel="stylesheet" href="{% static "css/twosides.css" %}">
+{% endblock %}
 {% block content %}
 <article class="content">
   <h1 class="heading">{{home_en.h1}}</h1>

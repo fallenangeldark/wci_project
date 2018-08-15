@@ -57,6 +57,7 @@ class InnerHomeEn(models.Model):
 class ClientAssesment(models.Model):
 
     CHOICE_MARITAL_STATUS = (
+    ('0', 'Please Choose...'),
     ('1','Annulled Marriage'),
     ('2','Common-Law'),
     ('3','Divorced / Separated'),
@@ -67,12 +68,14 @@ class ClientAssesment(models.Model):
     )
 
     CHOICE_IMMIGRATION_STATUS = (
+    ('0', 'Please Choose...'),
     ("1", "Not Applicable"),
     ("2", "Visitor"),
     ("3", "Student"),
     ("4", "Worker"),
     )
     CHOICE_EDU_LEVEL = (
+    ('0','Please Choose...'),
     ("1", "None, or less then secondary (high school)"),
     ("2", "Secondary diploma (High school Diploma)"),
     ("3", "One-year program at a university, college, trade or technical school, or other institute"),
@@ -91,16 +94,14 @@ class ClientAssesment(models.Model):
     ('Y', 'Yes'),
     ('N', 'No'),
     )
-    name = models.CharField(max_length=35, blank=False, default='')
-    travel_doc_name = models.CharField(max_length=40, blank=False)
+    travel_doc_name = models.CharField(max_length=60, blank=False)
     email = models.EmailField(max_length=30, blank=False)
     address = models.CharField(max_length=50, blank=True)
     contact_number = PhoneNumberField(blank=False)
-    marital_status = models.CharField(max_length=22,choices=CHOICE_MARITAL_STATUS, default='6')
-    nationality = models.CharField(max_length=25)
+    marital_status = models.CharField(max_length=22,choices=CHOICE_MARITAL_STATUS, default='0')
     dob = models.DateField()
-    immigration_status = models.CharField(max_length=14,choices=CHOICE_IMMIGRATION_STATUS, default='1')
-    edu_level = models.CharField(max_length=118,choices=CHOICE_EDU_LEVEL, default='1')
+    immigration_status = models.CharField(max_length=14,choices=CHOICE_IMMIGRATION_STATUS, default='0', error_messages={'required': (u'Waehlen Sie die Zahlungsart!'), 'invalid': (u'Waehlen Sie die Zahlungsart!')})
+    edu_level = models.CharField(max_length=118,choices=CHOICE_EDU_LEVEL, default='0')
     canadian_dipl = models.CharField(max_length=3, choices=CHOICE_YES_NO, default='N')
     school_progr_name = models.TextField(blank=True)
     off_lang_en = models.CharField(max_length=40)
@@ -112,7 +113,7 @@ class ClientAssesment(models.Model):
     nomin_cert = models.CharField(max_length=3, choices=CHOICE_YES_NO, default='N')
     partner_status_of_canada = models.CharField(max_length=3, choices=CHOICE_YES_NO_N, default='NO')
     partner_track = models.CharField(max_length=3, choices=CHOICE_YES_NO_N, default='NO')
-    partner_edu = models.CharField(max_length=118,choices=CHOICE_EDU_LEVEL, blank=True)
+    partner_edu = models.CharField(max_length=118,choices=CHOICE_EDU_LEVEL,  default='0')
     partner_work_exp = models.TextField(blank=True)
     partner_lang = models.CharField(max_length=40, blank=True)
     sibling_in_canada = models.CharField(max_length=3, choices=CHOICE_YES_NO, default='N')

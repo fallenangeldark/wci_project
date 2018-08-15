@@ -34,7 +34,6 @@ class ClientAssesmentEn(forms.ModelForm):
         'address': 'Address',
         'contact_number': 'Your Contact Number (required)',
         'marital_status': 'What is your marital status?',
-        'nationality': 'What is your nationality?',
         'dob': ' What is your D.O.B (Date of Birth)?',
         'immigration_status': 'What is your current immigration status?',
         'edu_level': 'What is your level of education?',
@@ -56,11 +55,11 @@ class ClientAssesmentEn(forms.ModelForm):
         'sibling_in_canada': 'Do you have a sibling in Canada who is a Canadian citizen or permanent resident of at least 18 years of age?',
         }
         widgets = {
-        'travel_doc_name': forms.Textarea(),
-        'name': forms.TextInput(attrs={'placeholder': 'Alex'}),
-        'dob': forms.DateInput(attrs={'placeholder': 'dd.mm.yyyy'}),
-        'email': forms.TextInput(attrs={'placeholder': 'example@mail.com'}),
-        'contact_number': forms.TextInput(attrs={'placeholder': '+7XXXXXXXXXX or +380XXXXXXXXX etc.'}),
+        'address': forms.TextInput(attrs={'placeholder': ' '}),
+        'travel_doc_name': forms.Textarea(attrs={'placeholder': ' ', 'pattern': '.{10,}'}),
+        'dob': forms.DateInput(attrs={'placeholder': 'dd.mm.yyyy', 'pattern': '(([0-2]{1}[0-9]{1})|([3][0-1]))\.((0{1}[0-9]{1})|(1{1}[0-2]{1}))\.((19[3-9][0-9])|(20[0-1][1-8]))'}),
+        'email': forms.TextInput(attrs={'placeholder': 'example@mail.com', 'pattern': '\w{1,}@\w{1,}\.\w{1,}'}),
+        'contact_number': forms.TextInput(attrs={'placeholder': '+7XXXXXXXXXX or +380XXXXXXXXX etc.', 'pattern': '\+\d{10,19}'}),
         'canadian_dipl': forms.RadioSelect(attrs={'class': 'radio'}),
         'canadian_cert': forms.RadioSelect(attrs={'class': 'radio'}),
         'valid_job': forms.RadioSelect(attrs={'class': 'radio'}),
@@ -68,4 +67,5 @@ class ClientAssesmentEn(forms.ModelForm):
         'partner_status_of_canada': forms.RadioSelect(attrs={'class': 'radio'}),
         'partner_track': forms.RadioSelect(attrs={'class': 'radio'}),
         'sibling_in_canada': forms.RadioSelect(attrs={'class': 'radio'}),
+        # 'marital_status': forms.Select(attrs={'disabled':'disabled'}),
         }
