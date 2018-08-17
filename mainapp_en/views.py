@@ -5,9 +5,9 @@ from django.shortcuts import redirect
 from mainapp_en.models import HomeEn, InnerHomeEn, ClientAssesment
 from mainapp_en.forms import ClientAssesmentEn
 from django.views import View
-from django.views.generic.base import RedirectView
-from datetime import datetime
-from django.urls import reverse
+# from django.views.generic.base import RedirectView
+# from datetime import datetime
+# from django.urls import reverse
 
 
 # Create your views here.

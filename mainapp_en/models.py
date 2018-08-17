@@ -1,6 +1,6 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
-from datetime import datetime
+# from datetime import datetime
 
 
 # Create your models here.
@@ -96,25 +96,26 @@ class ClientAssesment(models.Model):
     )
     travel_doc_name = models.CharField(max_length=60, blank=False)
     email = models.EmailField(max_length=30, blank=False)
-    address = models.CharField(max_length=50, blank=True)
+    address = models.CharField(max_length=80, blank=True)
     contact_number = PhoneNumberField(blank=False)
     marital_status = models.CharField(max_length=22,choices=CHOICE_MARITAL_STATUS, default='0')
+    country = models.CharField(max_length=45, blank=False)
     dob = models.DateField()
     immigration_status = models.CharField(max_length=14,choices=CHOICE_IMMIGRATION_STATUS, default='0', error_messages={'required': (u'Waehlen Sie die Zahlungsart!'), 'invalid': (u'Waehlen Sie die Zahlungsart!')})
     edu_level = models.CharField(max_length=118,choices=CHOICE_EDU_LEVEL, default='0')
     canadian_dipl = models.CharField(max_length=3, choices=CHOICE_YES_NO, default='N')
-    school_progr_name = models.TextField(blank=True)
+    school_progr_name = models.TextField(max_length=80,blank=True)
     off_lang_en = models.CharField(max_length=40)
     off_lang_fr = models.CharField(max_length=40)
-    work_exp_canada = models.TextField()
-    work_exp_home = models.TextField()
+    work_exp_canada = models.TextField(max_length=120)
+    # work_exp_home = models.TextField(max_length=120)
     canadian_cert = models.CharField(max_length=3, choices=CHOICE_YES_NO,default='N')
     valid_job = models.CharField(max_length=3, choices=CHOICE_YES_NO, default='N')
     nomin_cert = models.CharField(max_length=3, choices=CHOICE_YES_NO, default='N')
     partner_status_of_canada = models.CharField(max_length=3, choices=CHOICE_YES_NO_N, default='NO')
     partner_track = models.CharField(max_length=3, choices=CHOICE_YES_NO_N, default='NO')
     partner_edu = models.CharField(max_length=118,choices=CHOICE_EDU_LEVEL,  default='0')
-    partner_work_exp = models.TextField(blank=True)
+    partner_work_exp = models.TextField(max_length=120, blank=True)
     partner_lang = models.CharField(max_length=40, blank=True)
     sibling_in_canada = models.CharField(max_length=3, choices=CHOICE_YES_NO, default='N')
-    memo = models.TextField()
+    memo = models.TextField(blank=True)

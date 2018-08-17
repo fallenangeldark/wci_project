@@ -12,8 +12,8 @@ html, body {
 
 .header {
     width: auto;
-    height: 2em;
-    padding: 0.5em;
+    /* height: 2em;
+    padding: 0.5em; */
 }
 .search-info {
     #float:right;
@@ -60,13 +60,14 @@ html, body {
 }
 .banner {
     background-color: #aaa;
-    width: auto;
+    /* width: auto; */
     height: 16em;
     /* background: transparent; */
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 32%,rgba(0,0,0,0) 45%,rgba(245,245,245,0.9) 46%,rgba(245,245,245,1) 47%), url('../img/Canada-Alberta-Banff-national-Park-winter-forest-river-stream-snow_1920x1200.jpg');
-    background-size: 110% 290%;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 32%,rgba(0,0,0,0) 97%,rgba(245,245,245,0.9) 99%,rgba(245,245,245,1) 100%), url('../img/Canada-Alberta-Banff-national-Park-winter-forest-river-stream-snow_1920x12004.jpg');
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50% 20%;
+    background-position: center top;
+    padding-top:4em;
 }
 nav {
     margin: 0 0 1em 0;
@@ -88,7 +89,7 @@ nav ul li {
 /* стилизуем ссылки */
 nav ul li a {
     color: #8c8c8c;
-	font-size: 14px;
+	font-size: .8em;
 	font-weight: 700;
 	text-align: right;
 	text-transform: uppercase;
@@ -141,6 +142,7 @@ nav ul li a:active {
 .content h1 {
     text-indent: 2em;
     margin-bottom: 1.3em;
+    padding-top: 1em;
 }
 
 .content p{
@@ -343,7 +345,7 @@ form select{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance:none;
-    background-image: url(/static/img/select-arrow-open.png);
+    background-image: url(/static/img/select-arrow-open2.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right;

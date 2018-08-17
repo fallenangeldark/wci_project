@@ -14,4 +14,5 @@ urlpatterns =[
     path('visit/', mainapp_ru.Visit_ru.as_view(), name='visit'),
     path('life/', mainapp_ru.Life_ru.as_view(), name='life'),
     path('about/', mainapp_ru.About_ru.as_view(), name='about'),
+    path('form/', mainapp_ru.ClientAssesment_ru.as_view(), name='form'),
 ]

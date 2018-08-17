@@ -1,7 +1,7 @@
 {% load staticfiles %}
 <header class="header">
-    Contacts
-    <div class="search-info">search</div>
+    <!-- Contacts
+    <div class="search-info">search</div> -->
     <span class="lang last {% if '/ru/' in request.get_full_path %}active_lang{% endif %}"><a href="javascript:void(0);" onClick="javascript:getLang_ru();">Ru</a></span>
     <span class="lang first {% if '/en/' in request.get_full_path %}active_lang{% endif %}"><a href="javascript:void(0);" onClick="javascript:getLang_en();">En</a></span>
 </header>
