@@ -89,11 +89,6 @@ class ClientAssesment(models.Model):
     ('Y', 'Yes'),
     ('N', 'No'),
     )
-    CHOICE_YES_NO_N = (
-    ('NO', 'None'),
-    ('Y', 'Yes'),
-    ('N', 'No'),
-    )
     travel_doc_name = models.CharField(max_length=60, blank=False)
     email = models.EmailField(max_length=30, blank=False)
     address = models.CharField(max_length=80, blank=True)
@@ -112,9 +107,9 @@ class ClientAssesment(models.Model):
     canadian_cert = models.CharField(max_length=3, choices=CHOICE_YES_NO,default='N')
     valid_job = models.CharField(max_length=3, choices=CHOICE_YES_NO, default='N')
     nomin_cert = models.CharField(max_length=3, choices=CHOICE_YES_NO, default='N')
-    partner_status_of_canada = models.CharField(max_length=3, choices=CHOICE_YES_NO_N, default='NO')
-    partner_track = models.CharField(max_length=3, choices=CHOICE_YES_NO_N, default='NO')
-    partner_edu = models.CharField(max_length=118,choices=CHOICE_EDU_LEVEL,  default='0')
+    partner_status_of_canada = models.CharField(max_length=3, choices=CHOICE_YES_NO, default='N')
+    partner_track = models.CharField(max_length=3, choices=CHOICE_YES_NO, default='N')
+    partner_edu = models.CharField(max_length=118,choices=CHOICE_EDU_LEVEL,  default='1')
     partner_work_exp = models.TextField(max_length=120, blank=True)
     partner_lang = models.CharField(max_length=40, blank=True)
     sibling_in_canada = models.CharField(max_length=3, choices=CHOICE_YES_NO, default='N')

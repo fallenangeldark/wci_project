@@ -2,6 +2,7 @@ from django import forms
 from .models import ClientAssesment
 
 
+
 class ClientAssesmentEn(forms.ModelForm):
     # CHOICE_YES_NO = (
     # (False, 'No'),
@@ -37,8 +38,8 @@ class ClientAssesmentEn(forms.ModelForm):
         'country': 'What is your country? (required)',
         'dob': 'What is your D.O.B (Date of Birth)?',
         'immigration_status': 'What is your current immigration status? (required)',
-        'edu_level': 'What is your level of education?',
-        'school_progr_name': 'If yes, please provide School name and Program name.',
+        'edu_level': 'What is your level of education? (required)',
+        'school_progr_name': 'Please provide School name and Program name.',
         'off_lang_en': 'Official Languages: English (Test Name: Speaking / Listening / Reading / Writing)',
         'off_lang_fr': 'Official Languages: French (Test Name: Speaking / Listening / Reading / Writing)',
         'work_exp_canada': 'Work Experience (Full-Time) in Canada (NOC 0, A or B - Please provide Job title and Duration.)',
@@ -50,13 +51,13 @@ class ClientAssesmentEn(forms.ModelForm):
         'canadian_cert':'Do you have a certificate of qualification from a Canadian province or territory? (Skilled trade occupations)',
         'valid_job': 'Do you have a valid job offer supported by a Labour Market Impact Assessment (if needed)?',
         'nomin_cert': 'Do you have a nomination certificate from a province or territory?',
-        'partner_status_of_canada': 'If you are married, is your spouse or common-law partner a citizen or permanent resident of Canada?',
+        'partner_status_of_canada': 'Is your spouse or common-law partner a citizen or permanent resident of Canada?',
         'partner_track': 'Will your spouse or common-law partner come with you to Canada?',
         'sibling_in_canada': 'Do you have a sibling in Canada who is a Canadian citizen or permanent resident of at least 18 years of age?',
         'memo': 'Memo',
         }
         widgets = {
-        'travel_doc_name': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '.{10,60}'}),
+        'travel_doc_name': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '[A-z]{2,20} [A-z]{2,20} [A-z]{2,20}'}),
         'email': forms.TextInput(attrs={'placeholder': 'example@mail.com', 'pattern': '\w{1,}@\w{1,}\.\w{1,}'}),
         'address': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '.{10,80}'}),
         'contact_number': forms.TextInput(attrs={'placeholder': '+7XXXXXXXXXX or +1XXXXXXXXXX etc.', 'pattern': '\+\d{10,19}'}),

@@ -360,7 +360,7 @@ form button {
   padding: .8em 1em; #calc(.8em + 3px);
   border-radius: 3px;
   background: rgb(64,199,129);
-  box-shadow: 0 -3px rgb(53,167,110) inset;
+  box-shadow: 0 -3px rgb(53,167,110) inset, 2px 2px rgb(200,200,200);
   transition: 0.2s;
 }
 form button:hover { background: rgb(53, 167, 110); }

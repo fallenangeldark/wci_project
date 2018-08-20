@@ -128,3 +128,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static/static"),
 )
 STATIC_ROOT = (os.path.join(BASE_DIR, 'static'))
+
+
+# RECAPTCHA_PRIVATE_KEY = '6Ldgz2oUAAAAAE8bnbEDQtT1tVuej_QyLk1YXjCr'
+# RECAPTCHA_PUBLIC_KEY = '6Ldgz2oUAAAAAI6MlKZOVBUnDGAh64oYcmF8Ohys'

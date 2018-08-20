@@ -9,6 +9,7 @@
 {% block js %}
   <script type="text/javascript" src={% static "/js/langChange.js" %}></script>
   <script type="text/javascript" src={% static "/js/formjs.js" %}></script>
+  <script src='https://www.google.com/recaptcha/api.js?hl=en' async defer></script>
 {% endblock %}
 {% block content %}
 <h1 class='form-h1'>Clien Assesment Form</h1>
@@ -23,7 +24,9 @@
         {{form.label_tag}}<br>
         {{form}}
     {% endfor %}
+
 </div>
+<div class="g-recaptcha" data-sitekey="6Ldgz2oUAAAAAI6MlKZOVBUnDGAh64oYcmF8Ohys"></div>
 <button type="submit" name="button">Send</button>
 </form>
 {% endblock %}
@@ -42,5 +45,70 @@
 function borderChange(e){
   e.style.border = '1px solid #3b3';
 }
+</script>
+<script type="text/javascript">
+  var canCert = document.getElementById('id_canadian_dipl')
+  var lis1 = canCert.getElementsByTagName('input');
+  var hEl = document.getElementById('id_school_progr_name');
+  var hELable = hEl.previousElementSibling.previousElementSibling;
+  hEl.previousElementSibling.remove();
+
+  var maritalSt = document.getElementById('id_marital_status');
+  var maritalStList = [];
+  var maritalTextList = ['id_partner_status_of_canada','id_partner_track','id_partner_edu','id_partner_work_exp','id_partner_lang'];
+  for (var i=0; i<5; i++){
+    maritalStList[i]=document.getElementById(maritalTextList[i]);
+  };
+  maritalSt.setAttribute('onChange', 'hideElementsMarital(this)');
+  for(var i=0; i<5; i++){
+    maritalStList[i].style.display = 'none';
+    maritalStList[i].previousElementSibling.style.display = 'none';
+    maritalStList[i].previousElementSibling.previousElementSibling.style.display = 'none';
+    console.log('kek')
+};
+  console.log(maritalSt[0].selected);
+
+  function hideElementsMarital(e){
+    if((maritalSt[5].selected == true) || (maritalSt[2].selected == true)){
+      for(var i=0; i<5; i++){
+        maritalStList[i].style.display = 'block';
+        maritalStList[i].previousElementSibling.style.display = 'block';
+        maritalStList[i].previousElementSibling.previousElementSibling.style.display = 'inline-block';
+        console.log('kek1');
+      }
+    }
+    else{
+      for(var i=0; i<5; i++){
+        maritalStList[i].style.display = 'none';
+        maritalStList[i].previousElementSibling.style.display = 'none';
+        maritalStList[i].previousElementSibling.previousElementSibling.style.display = 'none';
+        console.log('kek');
+      }
+    }
+  }
+
+    for(var i=0; i < lis1.length; i++){
+      lis1[i].setAttribute('onChange', 'hideElementsCerts(this)');
+      if (lis1[1].checked == true){
+        hEl.style.display = 'none';
+        hELable.style.display = 'none';
+      }
+    }
+  function hideElementsCerts(e){
+    if (lis1[1].checked == true){
+      console.log(hELable);
+      console.log(hEl);
+      hEl.style.display = 'none';
+      hELable.style.display = 'none';
+    }
+
+    else if(lis1[0].checked == true){
+      console.log(hELable);
+      console.log(hEl);
+      hEl.style.display = 'block';
+      hELable.style.display = 'block';
+    }
+  }
+
 </script>
 {% endblock %}
