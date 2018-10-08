@@ -1,8 +1,28 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 # from datetime import datetime
+# from ckeditor.fields import RichTextField
 
 
+CHOICE_YES_NO = (
+('Y', 'Yes'),
+('N', 'No'),
+)
+CHOICE_LANG_EN_LEVEL = (
+('0','Please Choose...'),
+("1", "Beginner"),
+("2", "Intermediate"),
+("3", "Advanced"),
+("4", "Fluent"),
+)
+CHOICE_LANG_LEVEL = (
+('0','Please Choose...'),
+("1", "Not applicable"),
+("2", "Beginner"),
+("3", "Intermediate"),
+("4", "Advanced"),
+("5", "Fluent"),
+)
 # Create your models here.
 
 class HomeEn(models.Model):
@@ -31,7 +51,7 @@ class HomeEn(models.Model):
 
 class InnerHomeEn(models.Model):
     outer_relation = models.ForeignKey(HomeEn, on_delete=models.CASCADE)
-    name = models.CharField(max_length=30, blank=True)
+    name = models.CharField(max_length=40, blank=True)
     h1 = models.CharField(max_length=30, blank=True)
     paragraph1 = models.TextField(blank=True)
     paragraph2 = models.TextField(blank=True)
@@ -85,10 +105,8 @@ class ClientAssesment(models.Model):
     ("7", "Master's degree, or professional degree needed to practice in a licensed profession"),
     ("8", "Doctoral level university degree (PhD)"),
     )
-    CHOICE_YES_NO = (
-    ('Y', 'Yes'),
-    ('N', 'No'),
-    )
+
+
     travel_doc_name = models.CharField(max_length=60, blank=False)
     email = models.EmailField(max_length=30, blank=False)
     address = models.CharField(max_length=80, blank=True)
@@ -100,8 +118,10 @@ class ClientAssesment(models.Model):
     edu_level = models.CharField(max_length=118,choices=CHOICE_EDU_LEVEL, default='0')
     canadian_dipl = models.CharField(max_length=3, choices=CHOICE_YES_NO, default='N')
     school_progr_name = models.TextField(max_length=80,blank=True)
-    off_lang_en = models.CharField(max_length=40)
-    off_lang_fr = models.CharField(max_length=40)
+    # off_lang_en = models.CharField(max_length=40)
+    off_lang_en_level = models.CharField(max_length=15,choices=CHOICE_LANG_EN_LEVEL, default='0')
+    # off_lang_fr = models.CharField(max_length=40)
+    off_lang_fr_level = models.CharField(max_length=15,choices=CHOICE_LANG_LEVEL, default='0')
     work_exp_canada = models.TextField(max_length=120)
     # work_exp_home = models.TextField(max_length=120)
     canadian_cert = models.CharField(max_length=3, choices=CHOICE_YES_NO,default='N')
@@ -113,4 +133,50 @@ class ClientAssesment(models.Model):
     partner_work_exp = models.TextField(max_length=120, blank=True)
     partner_lang = models.CharField(max_length=40, blank=True)
     sibling_in_canada = models.CharField(max_length=3, choices=CHOICE_YES_NO, default='N')
+    memo = models.TextField(blank=True)
+
+class Education(models.Model):
+
+    CHOICE_MARITAL_STATUS = (
+    ('0', 'Please Choose...'),
+    ('1','Married'),
+    ('2','Common-Law'),
+    ('3','Single / Divorced'),
+    )
+    CHOICE_EDU_LEVEL = (
+    ('0','Please Choose...'),
+    ("1", "None, or less then secondary (high school)"),
+    ("2", "Secondary diploma (High school Diploma)"),
+    ("3", "College certificate"),
+    ("4", "Bachelor's degree"),
+    ("5", "Master's degree"),
+    ("6", "Doctoral university degree (PhD)"),
+    )
+    CHOICE_PROGRAM = (
+    ('0','Please Choose...'),
+    ("1", "English language courses"),
+    ("2", "French language courses"),
+    ("3", "Kids and teens camp programs"),
+    ("4", "College or university preparation"),
+    ("5", "University"),
+    ("5", "Postsecondary diploma"),
+    ("5", "Masters degree"),
+    ("5", "PhD"),
+    )
+    travel_doc_name = models.CharField(max_length=60, blank=False)
+    email = models.EmailField(max_length=30, blank=False)
+    contact_number = PhoneNumberField(blank=False)
+    citizenship = models.CharField(max_length=40, blank=False)
+    country = models.CharField(max_length=45, blank=False)
+    dob = models.DateField()
+    marital_status = models.CharField(max_length=22,choices=CHOICE_MARITAL_STATUS, default='0')
+    edu_level = models.CharField(max_length=118,choices=CHOICE_EDU_LEVEL, default='0')
+    off_lang_en_level = models.CharField(max_length=15,choices=CHOICE_LANG_EN_LEVEL, default='0')
+    off_lang_fr_level = models.CharField(max_length=15,choices=CHOICE_LANG_LEVEL, default='0')
+    en_fr_cert = models.TextField(blank=True)
+    int_program = models.CharField(max_length=15,choices=CHOICE_PROGRAM, default='0')
+    plan_date = models.DateField()
+    pref_province = models.CharField(max_length=40, blank=True)
+    plan_budget = models.CharField(max_length=15, blank=False)
+    visa_rejected = models.CharField(max_length=3, choices=CHOICE_YES_NO, default='N')
     memo = models.TextField(blank=True)

@@ -40,7 +40,23 @@ INSTALLED_APPS = [
     'mainapp_ru',
     'mainapp_en',
     'phonenumber_field',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
+# Зависимость визуального редактора
+CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+CKEDITOR_UPLOAD_PATH = "media/ckeditor_uploads"
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'standard',
+    }
+}
+
+CKEDITOR_UPLOAD_SLUGIFY_FILENAME = False
+CKEDITOR_RESTRICT_BY_USER = True
+CKEDITOR_BROWSE_SHOW_DIRS = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -128,7 +144,8 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static/static"),
 )
 STATIC_ROOT = (os.path.join(BASE_DIR, 'static'))
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 # RECAPTCHA_PRIVATE_KEY = '6Ldgz2oUAAAAAE8bnbEDQtT1tVuej_QyLk1YXjCr'
 # RECAPTCHA_PUBLIC_KEY = '6Ldgz2oUAAAAAI6MlKZOVBUnDGAh64oYcmF8Ohys'

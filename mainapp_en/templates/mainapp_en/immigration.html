@@ -9,24 +9,27 @@
   <link rel="stylesheet" href="{% static "css/twosides.css" %}">
 {% endblock %}
 {% block left-side %}
-  <h2>In this section</h2>
+  <h2>In this section:</h2>
+  <aside class="">
+
+  <br>
   <ul>
-
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-
+    <li><a href="{% url 'mainapp_en:immigration-express_entry' %}">Express Entry</a></li>
+    <li><a href="{% url 'mainapp_en:immigration-business_class' %}">Business Class</a></li>
+    <li><a href="{% url 'mainapp_en:immigration-family_sponsorship' %}">Family Sponsorship</a></li>
+    <li><a href="{% url 'mainapp_en:immigration-caips' %}">CAIPS Notes</a></li>
+    <li><a href="{% url 'mainapp_en:immigration-custodianship' %}">Custodianship for minor students</a></li>
+    <li><a href="{% url 'mainapp_en:client_assesment_form' %}">Client Assessment Form</a></li>
   </ul>
+  </aside>
 {% endblock %}
 {% block content %}
+<h1 class="heading">{{home_en.h1}}</h1>
 <article class="content">
-  <h1 class="heading">{{home_en.h1}}</h1>
-  <p class="content-inner">{{home_en.paragraph1}}</p>
-  <p class="content-inner">{{home_en.paragraph2}}</p>
-  <p class="content-inner">{{home_en.paragraph3}}</p>
-  <p class="content-inner">{{home_en.paragraph4}}</p>
-</article>
-  <div class="request-info">
-    Запросить дополнительную информацию
+  <div class="content-inner">
+    <p>{{home_en.paragraph1}}</p>
+    <p>{{home_en.paragraph2}}</p>
   </div>
+  <br>
+</article>
 {% endblock %}

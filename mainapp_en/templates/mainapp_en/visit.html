@@ -8,13 +8,24 @@
   <link rel="stylesheet" href="{% static "css/main.css" %}">
   <link rel="stylesheet" href="{% static "css/twosides.css" %}">
 {% endblock %}
+{% block left-side %}
+  <h2>In this section:</h2>
+  <br>
+  <ul>
+    <li><a href="#">lorem 1</a></li>
+    <li><a href="#">lorem 1</a></li>
+    <li><a href="#">lorem 1</a></li>
+    <li><a href="#">lorem 1</a></li>
+    <li><a href="#">lorem 1sad</a></li>
+    <li><a href="{% url 'mainapp_en:client_assesment_form' %}">Client Assessment Form</a></li>
+
+  </ul>
+{% endblock %}
 {% block content %}
+<h1 class="heading">{{home_en.h1}}</h1>
 <article class="content">
-  <h1 class="heading">{{home_en.h1}}</h1>
   <p class="content-inner">{{home_en.paragraph1}}</p>
-  <p class="content-inner">{{home_en.paragraph2}}</p>
-  <p class="content-inner">{{home_en.paragraph3}}</p>
-  <p class="content-inner">{{home_en.paragraph4}}</p>
+
 </article>
   <div class="request-info">
     Запросить дополнительную информацию

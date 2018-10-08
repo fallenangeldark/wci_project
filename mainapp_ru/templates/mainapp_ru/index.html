@@ -8,7 +8,7 @@
 {% block content %}
 <article class="content">
   <h1 class="heading">{{home_ru.h1}}</h1>
-  <p class="content-inner">{{home_ru.paragraph1}}</p>
+  <p class="content-inner">{% autoescape off %}{{home_ru.paragraph1}}{% endautoescape %}</p>
   <p class="content-inner">{{home_ru.paragraph2}}</p>
   <p class="content-inner">{{home_ru.paragraph3}}</p>
   <p class="content-inner">{{home_ru.paragraph4}}</p>
