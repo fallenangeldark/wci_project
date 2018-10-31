@@ -97,7 +97,54 @@ nav ul li {
     margin: .6em -7px 0 0;
     display:inline-block;
     }
-
+form.menu_search{
+    display: inline-block;
+    margin: .6em -7px 0 0;
+    font-size: .9em;
+    color: #8c8c8c;
+}
+form.menu_search input[type=submit]{
+    color: #8c8c8c;
+    border: 2px solid #8c8c8c;
+    border-radius: 3px;
+    background: #fff;
+    outline: none;
+    width: 5em;
+    height: 1.5em;
+    box-shadow: 2px 2px rgb(200,200,200);
+    cursor:pointer;
+}
+form.menu_search input[type=submit]:hover{
+    color: #555;
+    border: 2px solid #922;
+}
+form.menu_search input[type=submit]:active{
+    border: 2px solid #922;
+    box-shadow: none;
+}
+form.menu_search input[type=search]{
+    border: 2px solid #8c8c8c;
+    border-radius: 3px;
+    background: #fff;
+    outline: none;
+    width: 8em;
+    height: 1.5em;
+    text-indent: .2em;
+}
+form.menu_search input[type=search]:focus{
+    border: 2px solid #922;
+}
+.h4_links {
+    margin-bottom: .2em;
+}
+.h4_links a {
+    text-decoration: none;
+    color: #8c8c8c;
+}
+.h4_links a:hover {
+    text-decoration: underline;
+    color: #922;
+}
 /* стилизуем ссылки */
 nav ul li a {
     color: #8c8c8c;

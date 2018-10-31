@@ -5,6 +5,7 @@ from django.shortcuts import redirect
 from mainapp_en.models import HomeEn, InnerHomeEn
 from mainapp_en.forms import ClientAssesmentEn, EducationEn
 from django.views import View
+from django.db.models import Q
 # from django.views.generic.base import RedirectView
 # from datetime import datetime
 # from django.urls import reverse
@@ -222,3 +223,29 @@ class Education_en(View):
 
 def home_view_en(request):
     return redirect('')
+
+class SearchView(View):
+    template_name = 'mainapp_en/search.html'
+
+    def get(self, request, *args, **kwargs):
+        query = self.request.GET.get('q')
+        list_class_items = ['h1', 'paragraph1','paragraph2','paragraph3','paragraph4','paragraph5','paragraph6','paragraph7','paragraph8','paragraph9','paragraph10','paragraph11','paragraph12','paragraph13']
+
+        founded_articles = HomeEn.objects.filter(Q(h1__icontains=query)|Q(paragraph1__icontains=query)|Q(paragraph2__icontains=query)|Q(paragraph3__icontains=query)|Q(paragraph4__icontains=query)|Q(paragraph5__icontains=query)|Q(paragraph6__icontains=query)|Q(paragraph7__icontains=query)|Q(paragraph8__icontains=query)|Q(paragraph9__icontains=query)|Q(paragraph10__icontains=query)|Q(paragraph11__icontains=query)|Q(paragraph12__icontains=query)|Q(paragraph13__icontains=query))
+        founded_inner_articles =  InnerHomeEn.objects.filter(Q(h1__icontains=query)|Q(paragraph1__icontains=query)|Q(paragraph2__icontains=query)|Q(paragraph3__icontains=query)|Q(paragraph4__icontains=query)|Q(paragraph5__icontains=query)|Q(paragraph6__icontains=query)|Q(paragraph7__icontains=query)|Q(paragraph8__icontains=query)|Q(paragraph9__icontains=query)|Q(paragraph10__icontains=query)|Q(paragraph11__icontains=query)|Q(paragraph12__icontains=query)|Q(paragraph13__icontains=query))
+        links_founded_articles = []
+        for link in founded_articles:
+            links_founded_articles.append(link.link)
+        links_founded_inner_articles = []
+        for link in founded_inner_articles:
+            links_founded_inner_articles.append(link.link)
+        count = len(founded_articles) + len(founded_inner_articles)
+        context = {
+        'founded_articles': founded_articles,
+        'founded_inner_articles': founded_inner_articles,
+        'head_links': links_founded_articles,
+        'inner_links': links_founded_inner_articles,
+        'count': count,
+        'title': 'Search'
+        }
+        return render(self.request, self.template_name, context)

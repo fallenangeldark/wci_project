@@ -41,6 +41,7 @@ class HomeEn(models.Model):
     paragraph11 = models.TextField(blank=True)
     paragraph12 = models.TextField(blank=True)
     paragraph13 = models.TextField(blank=True)
+    link = models.TextField(blank=True)
 
     class Meta():
         verbose_name_plural = "Pages"
@@ -66,6 +67,7 @@ class InnerHomeEn(models.Model):
     paragraph11 = models.TextField(blank=True)
     paragraph12 = models.TextField(blank=True)
     paragraph13 = models.TextField(blank=True)
+    link = models.TextField(blank=True)
 
 
     class Meta():
