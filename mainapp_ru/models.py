@@ -44,6 +44,7 @@ class HomeRu(models.Model):
     paragraph11 = models.TextField(blank=True)
     paragraph12 = models.TextField(blank=True)
     paragraph13 = models.TextField(blank=True)
+    link = models.TextField(blank=True)
 
     class Meta():
         verbose_name_plural = "Страницы"
@@ -55,7 +56,7 @@ class HomeRu(models.Model):
 class InnerHomeRu(models.Model):
     outer_relation = models.ForeignKey(HomeRu, on_delete=models.CASCADE)
     name = models.CharField(max_length=40, blank=True)
-    h1 = models.CharField(max_length=30, blank=True)
+    h1 = models.CharField(max_length=35, blank=True)
     paragraph1 = models.TextField(blank=True)
     paragraph2 = models.TextField(blank=True)
     paragraph3 = models.TextField(blank=True)
@@ -69,6 +70,7 @@ class InnerHomeRu(models.Model):
     paragraph11 = models.TextField(blank=True)
     paragraph12 = models.TextField(blank=True)
     paragraph13 = models.TextField(blank=True)
+    link = models.TextField(blank=True)
 
 
     class Meta():

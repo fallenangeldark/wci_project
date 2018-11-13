@@ -1,4 +1,4 @@
-{% extends 'mainapp_en/base0.html' %}
+{% extends 'mainapp_ru/base0.html' %}
 {% load staticfiles %}
 {% block title %}
   {{title}}
@@ -9,14 +9,24 @@
 {% block js %}
   <script type="text/javascript" src={% static "/js/langChange.js" %}></script>
 {% endblock %}
+{% block left-side %}
+  <h2>В этом разделе:</h2>
+  <br>
+  <ul>
+    <li><a href="{% url 'mainapp_ru:client_assesment_form' %}">Форма оценки клиента</a></li>
+    <li><a href="{% url 'mainapp_ru:education_form' %}">Заявка на обучение</a></li>
+
+  </ul>
+{% endblock %}
 {% block content %}
-<h1 class=''>Clien Assesment Form</h1>
-<hr>
-<p class=''>Fill out <a href="{% url 'mainapp_en:client_assesment_form' %}">this</a> form to find out if you're qualified to immigrate to Canada</p>
-<h1 class=''>Education Form</h1>
-<hr>
-<p class=''>Fill out <a href="{% url 'mainapp_en:education_form' %}">this</a> form to find out if you're qualified to take education in Canada</p>
-{{home_en.h1}}
+<h1 class='center first'>Форма оценки клиента</h1>
+
+<br>
+<p class=''>Заполните <a href="{% url 'mainapp_ru:client_assesment_form' %}" class="this">данную</a> форму для получения возможности иммигрировать в Канаду</p>
+<h1 class='center'>Заявка на обучение</h1>
+
+<br>
+<p class=''>Заполните <a href="{% url 'mainapp_ru:education_form' %}" class="this">данную</a> форму для уточнения возможности получить образование в Канаде</p>
 
 
 {% endblock %}

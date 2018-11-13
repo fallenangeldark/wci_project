@@ -4,16 +4,32 @@
 {% block title %}
   {{title}}
 {% endblock %}
+{% block css %}
+  <link rel="stylesheet" href="{% static "css/main.css" %}">
+  <link rel="stylesheet" href="{% static "css/twosides.css" %}">
+{% endblock %}
+{% block left-side %}
+  <h2>В этом разделе:</h2>
+  <aside class="">
 
+  <br>
+  <ul>
+    <li><a href="{% url 'mainapp_ru:immigration-express_entry_ru' %}">Система Express Entry</a></li>
+    <li><a href="{% url 'mainapp_ru:immigration_bus_ru' %}">Бизнес иммиграция</a></li>
+    <li><a href="{% url 'mainapp_ru:immigration-family_sponsorship_ru' %}">Семейное спонсорство</a></li>
+    <li><a href="{% url 'mainapp_ru:immigration-caips_ru' %}">Записи CAIPS</a></li>
+    <li><a href="{% url 'mainapp_ru:immigration-custodianship_ru' %}">Опекунство</a></li>
+    <li><a href="{% url 'mainapp_ru:client_assesment_form' %}">Client Assessment Form</a></li>
+  </ul>
+  </aside>
+{% endblock %}
 {% block content %}
+<h1 class="heading">{{home_ru.h1}}</h1>
 <article class="content">
-  <h1 class="heading">{{home_ru.h1}}</h1>
-  <p class="content-inner">{{home_ru.paragraph1}}</p>
-  <p class="content-inner">{{home_ru.paragraph2}}</p>
-  <p class="content-inner">{{home_ru.paragraph3}}</p>
-  <p class="content-inner">{{home_ru.paragraph4}}</p>
-</article>
-  <div class="request-info">
-    Запросить дополнительную информацию
+  <div class="content-inner">
+    <p>{{home_ru.paragraph1}}</p>
+    <p>{{home_ru.paragraph2}}</p>
   </div>
+  <br>
+</article>
 {% endblock %}

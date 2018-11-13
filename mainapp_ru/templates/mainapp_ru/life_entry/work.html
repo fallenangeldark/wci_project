@@ -1,0 +1,18 @@
+{% extends 'mainapp_ru/life.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<h1 class="heading">{{in_home_ru.h1}}</h1>
+<article class="content">
+  <div class="content-inner">
+    <p>{{in_home_ru.paragraph1}}</p>
+    <ol class="content-ul">
+      <li>{{in_home_ru.paragraph2}}</li>
+      <li>{{in_home_ru.paragraph3}}</li>
+      <li>{{in_home_ru.paragraph4}}</li>
+      <li>{{in_home_ru.paragraph5}}</li>
+    </ol>
+  </div>
+  <br>
+</article>
+{% endblock %}

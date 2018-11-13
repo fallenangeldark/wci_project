@@ -27,7 +27,7 @@ CHOICE_LANG_LEVEL = (
 
 class HomeEn(models.Model):
     name = models.CharField(max_length=30, blank=True)
-    h1 = models.CharField(max_length=30, blank=True)
+    h1 = models.CharField(max_length=33, blank=True)
     paragraph1 = models.TextField(blank=True)
     paragraph2 = models.TextField(blank=True)
     paragraph3 = models.TextField(blank=True)
@@ -53,7 +53,7 @@ class HomeEn(models.Model):
 class InnerHomeEn(models.Model):
     outer_relation = models.ForeignKey(HomeEn, on_delete=models.CASCADE)
     name = models.CharField(max_length=40, blank=True)
-    h1 = models.CharField(max_length=30, blank=True)
+    h1 = models.CharField(max_length=33, blank=True)
     paragraph1 = models.TextField(blank=True)
     paragraph2 = models.TextField(blank=True)
     paragraph3 = models.TextField(blank=True)

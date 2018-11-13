@@ -246,6 +246,7 @@ class SearchView(View):
         'head_links': links_founded_articles,
         'inner_links': links_founded_inner_articles,
         'count': count,
-        'title': 'Search'
+        'title': 'Search',
+        'query': query
         }
         return render(self.request, self.template_name, context)

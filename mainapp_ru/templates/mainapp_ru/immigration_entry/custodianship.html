@@ -1,0 +1,24 @@
+{% extends 'mainapp_ru/immigration.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<h1 class="heading">{{in_home_ru.h1}}</h1>
+<article class="content">
+  <div class="content-inner">
+    <p>{{in_home_ru.paragraph1}}</p>
+    <br>
+    <table class="cust-table">
+      <tr>
+        <td>{{in_home_ru.paragraph2}}</td>
+        <td>{{in_home_ru.paragraph3}}</td>
+      </tr>
+      <tr>
+        <td>{{in_home_ru.paragraph4}}</td>
+        <td>{{in_home_ru.paragraph5}}</td>
+      </tr>
+    </table>
+    <p>{{in_home_ru.paragraph6}}</p>
+    <p>{{in_home_ru.paragraph7}}</p>
+</div>
+</article>
+{% endblock %}

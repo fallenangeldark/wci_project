@@ -1,0 +1,18 @@
+{% extends 'mainapp_ru/immigration.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<h1 class="heading">{{in_home_ru.h1}}</h1>
+<article class="content">
+  <div class="content-inner">
+    <p>{{in_home_ru.paragraph1}}</p>
+    <p>{{in_home_ru.paragraph2}}</p>
+    <ul class="content-ul">
+      <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/federal-skilled-workers.html">{{in_home_ru.paragraph3}}</a></li>
+      <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/skilled-trades.html">{{in_home_ru.paragraph4}}</a></li>
+      <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/canadian-experience-class.html">{{in_home_ru.paragraph5}}</a></li>
+    </ul>
+  </div>
+  <br>
+</article>
+{% endblock %}

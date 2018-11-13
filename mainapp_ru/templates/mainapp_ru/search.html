@@ -1,4 +1,4 @@
-{% extends 'mainapp_en/base.html' %}
+{% extends 'mainapp_ru/base.html' %}
 {% load staticfiles %}
 
 {% block title %}
@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-<h3>Results found for "{{query}}": {{count}}</h3>
+<h3>По запросу "{{query}}" найдено: {{count}} </h3>
 <br>
   {% for article in founded_articles %}
     <br>

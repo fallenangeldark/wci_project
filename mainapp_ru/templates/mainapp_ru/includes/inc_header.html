@@ -10,10 +10,12 @@
   <ul class="menu">
     <li><a href="{% url 'mainapp_ru:home' %}" class="{% if 'education' in request.get_full_path %}active{% endif %} %}">Обучение</a></li>
     <li><a href="{% url 'mainapp_ru:immigration' %}" class="{% if 'immigration' in request.get_full_path %}active{% endif %}">Иммиграция</a></li>
-    <li><a href="{% url 'mainapp_ru:visit' %}" class="{% if 'visit' in request.get_full_path %}active{% endif %}">Посещение Канады</a></li>
     <li><a href="{% url 'mainapp_ru:life' %}" class="{% if 'life' in request.get_full_path %}active{% endif %}">Жизнь в Канаде</a></li>
-    <li><a href="{% url 'mainapp_ru:immigration' %}">Иммиграция</a></li>
-    <li><a href="{% url 'mainapp_ru:about' %}">Информация о проекте</a></li>
-    <li><a href="{% url 'mainapp_ru:forms'  %}" class="{% if 'forms' in request.get_full_path %}active{% endif %}">Форма оценки</a></li>
+    <li><a href="{% url 'mainapp_ru:about' %}" class="{% if 'about' in request.get_full_path %}active{% endif %}">Информация о проекте</a></li>
+    <li><a href="{% url 'mainapp_ru:forms'  %}" class="{% if 'forms' in request.get_full_path %}active{% endif %}">Формы</a></li>
+    <form class="menu_search" action="{% url 'mainapp_ru:search_view' %}" method="GET">
+      <p><input type="search" name="q" placeholder="Поиск">
+        <input type="submit" value="Поиск"></p>
+    </form>
   </ul>
 </nav>

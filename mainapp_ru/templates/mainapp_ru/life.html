@@ -4,6 +4,24 @@
 {% block title %}
   {{title}}
 {% endblock %}
+{% block css %}
+  <link rel="stylesheet" href="{% static "css/main.css" %}">
+  <link rel="stylesheet" href="{% static "css/twosides.css" %}">
+{% endblock %}
+{% block left-side %}
+  <h2>В этом разделе:</h2>
+  <aside class="">
+
+  <br>
+  <ul>
+    <li><a href="{% url 'mainapp_ru:life-arrival_ru' %}">Прибытие в Канаду</a></li>
+    <li><a href="{% url 'mainapp_ru:life-health_ins_ru' %}">Страхование здоровья</a></li>
+    <li><a href="{% url 'mainapp_ru:life-pl_to_live_ru' %}">Жилье</a></li>
+    <li><a href="{% url 'mainapp_ru:life-work_ru' %}">Работа в Канаде</a></li>
+    <li><a href="{% url 'mainapp_ru:life-links_ru' %}">Полезные ресурсы</a></li>
+  </ul>
+  </aside>
+{% endblock %}
 
 {% block content %}
 <article class="content">
