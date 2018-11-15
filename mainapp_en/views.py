@@ -250,3 +250,16 @@ class SearchView(View):
         'query': query
         }
         return render(self.request, self.template_name, context)
+
+
+# Обработка ошибки 404
+
+from django.shortcuts import render_to_response
+from django.template import RequestContext
+
+
+
+def handler404(request, template_name="mainapp_en/404.html"):
+    response = render_to_response("mainapp_en/404.html")
+    response.status_code = 404
+    return response

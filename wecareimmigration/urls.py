@@ -21,6 +21,8 @@ import mainapp_en.views as mainapp_en
 from django.views.generic.base import RedirectView
 
 
+handler404 = 'mainapp_en.views.handler404'
+handler500 = 'mainapp_en.views.handler404'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', RedirectView.as_view(url='/ru/education')),
