@@ -217,10 +217,9 @@ nav ul li a:active {
 h1{
     text-indent: 2em;
     margin-top: 1.3em;
-    margin-bottom: 1em;
+    margin-bottom: .5em;
 }
-.right-side h1.center{
-}
+
 .right-side p{
     text-indent: 1em;
     /* padding: 0 .5em; */
@@ -241,10 +240,7 @@ a.this:hover{
     margin-right: 12%;
     /* float: left; */
 }
-h1.center{
-    /* text-align: center; */
-    padding-bottom: .5em;
-}
+
 article.content{
     border: 3px solid #e7e7e7;
     border-radius: 7px;
