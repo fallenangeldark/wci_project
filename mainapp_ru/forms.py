@@ -37,7 +37,7 @@ class ClientAssesmentRu(forms.ModelForm):
         }
         widgets = {
         'travel_doc_name': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '.{10,60}'}),
-        'email': forms.TextInput(attrs={'placeholder': 'example@mail.com', 'pattern': '\w{1,}[-]{0,10}\w{0,}@\w{1,}[-]{0,3}\w{0,}\.\w{1,}'}),
+        'email': forms.TextInput(attrs={'placeholder': 'example@mail.com', 'pattern': '[A-z.]{1,}[-.]{0,10}[A-z.]{0,}@\w{1,}[-.]{0,3}\w{0,}\.\w{1,}'}),
         'address': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '.{10,80}'}),
         'contact_number': forms.TextInput(attrs={'placeholder': '+7XXXXXXXXXX или +380XXXXXXXXX и т.д.', 'pattern': '\+\d{10,19}'}),
         'country': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '.{2,45}'}),
@@ -88,7 +88,7 @@ class EducationRu(forms.ModelForm):
         }
         widgets = {
         'travel_doc_name': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '[A-z]{2,20} [A-z]{2,20} [A-z]{2,20}'}),
-        'email': forms.TextInput(attrs={'placeholder': 'example@mail.com', 'pattern': '\w{1,}[-]{0,10}\w{0,}@\w{1,}[-]{0,3}\w{0,}\.\w{1,}'}),
+        'email': forms.TextInput(attrs={'placeholder': 'example@mail.com', 'pattern': '[A-z.]{1,}[-.]{0,10}[A-z.]{0,}@\w{1,}[-.]{0,3}\w{0,}\.\w{1,}'}),
         'citizenship': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '.{2,4}'}),
         'contact_number': forms.TextInput(attrs={'placeholder': '+7XXXXXXXXXX or +1XXXXXXXXXX etc.', 'pattern': '\+\d{10,19}'}),
         'country': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '.{2,45}'}),

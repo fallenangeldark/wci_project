@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Success</title>
+    <style media="screen">
+        body{
+            margin:0;
+            padding:0;
+            background-color: #f8f8f8;
+        }
+        p{
+            margin:0 auto;
+            display: block;
+            text-align: center;
+            font-family:  Verdana, Tahoma, Arial, sans-serif;
+            font-size: 1.1em;
+            background-color: #f8f8f8;
+            color: #555;
+        }
+        .p1{
+            margin-top:20%;
+        }
+        a:hover{
+            color: #922;
+            font-weight: 700;
+            border-bottom: 2px solid #922;
+        }
+        a{
+            text-decoration: none;
+            font-weight: 700;
+            color: #8c8c8c;
+        }
+    </style>
+</head>
+<body>
+  <p class="p1">Your form successfully submitted.</p>
+  <p class="p2">You will be redirected to the <a href="{% url 'mainapp_en:home' %}">main page</a>.</p>
+  <script type="text/javascript">
+      setTimeout('location.replace("http://127.0.0.1:8000/en/education")',5000);
+  </script>
+</body>
+</html>

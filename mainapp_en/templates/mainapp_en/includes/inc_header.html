@@ -13,6 +13,7 @@
     <li><a href="{% url 'mainapp_en:life' %}" class="{% if 'life' in request.get_full_path %}active{% endif %}">Life in Canada</a></li>
     <li><a href="{% url 'mainapp_en:about' %}" class="{% if 'about' in request.get_full_path %}active{% endif %}">About us</a></li>
     <li><a href="{% url 'mainapp_en:forms'  %}" class="{% if 'forms' in request.get_full_path %}active{% endif %}">Forms</a></li>
+    <li><a href="{% url 'mainapp_en:redirect'  %}" class="{% if 'forms' in request.get_full_path %}active{% endif %}">Redirect</a></li>
     <form class="menu_search" action="{% url 'mainapp_en:search_view' %}" method="GET">
       <p><input type="search" name="q" placeholder="Search">
         <input type="submit" value="Search"></p>

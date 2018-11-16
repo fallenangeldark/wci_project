@@ -25,5 +25,6 @@ urlpatterns =[
     path('forms/', mainapp_en.Forms_en.as_view(), name='forms'),
     path('forms/cl_as_form', mainapp_en.ClientAssesment_en.as_view(), name='client_assesment_form'),
     path('forms/edu_form', mainapp_en.Education_en.as_view(), name='education_form'),
-    path('search', mainapp_en.SearchView.as_view(), name='search_view')
+    path('search', mainapp_en.SearchView.as_view(), name='search_view'),
+    path('redirect', mainapp_en.redirect_page, name='redirect'),
 ]

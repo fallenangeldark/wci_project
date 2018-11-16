@@ -31,7 +31,8 @@ urlpatterns =[
     path('forms/cl_as_form', mainapp_ru.ClientAssesment_ru.as_view(), name='client_assesment_form'),
     path('forms/edu_form', mainapp_ru.Education_ru.as_view(), name='education_form'),
     path('search', mainapp_ru.SearchView.as_view(), name='search_view'),
-    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    path('redirect', mainapp_ru.redirect_page, name='redirect'),
+    # url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]
 # if settings.DEBUG:
 #     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

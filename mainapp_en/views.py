@@ -6,6 +6,7 @@ from mainapp_en.models import HomeEn, InnerHomeEn
 from mainapp_en.forms import ClientAssesmentEn, EducationEn
 from django.views import View
 from django.db.models import Q
+from django.shortcuts import render_to_response
 # from django.views.generic.base import RedirectView
 # from datetime import datetime
 # from django.urls import reverse
@@ -188,7 +189,8 @@ class ClientAssesment_en(View):
         if formset.is_valid():
             formset.save()
             print('THIS IS SAVE')
-            return HttpResponseRedirect('/en/education')
+            return HttpResponseRedirect('/en/redirect')
+            # return render('mainapp_en/redirect.html')
         else :
             print('THIS IS NOT SAVE')
             return render(request, self.template_name, {'formset': formset, 'title': 'Assesment Form', 'title': 'Form'})
@@ -211,7 +213,7 @@ class Education_en(View):
         if formset.is_valid():
             formset.save()
             print('THIS IS SAVE')
-            return HttpResponseRedirect('/en/education')
+            return HttpResponseRedirect('/en/redirect')
         else :
             print('THIS IS NOT SAVE')
             return render(request, self.template_name, {'formset': formset, 'title': 'Education Form'})
@@ -251,10 +253,12 @@ class SearchView(View):
         }
         return render(self.request, self.template_name, context)
 
+def redirect_page(request):
+    template_name = 'mainapp_en/redirect.html'
+    return render(request, 'mainapp_en/redirect.html')
 
 # Обработка ошибки 404
 
-from django.shortcuts import render_to_response
 from django.template import RequestContext
 
 

@@ -37,8 +37,8 @@ class ClientAssesmentEn(forms.ModelForm):
         'memo': 'Memo',
         }
         widgets = {
-        'travel_doc_name': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '[A-z]{2,20} [A-z]{2,20} [A-z]{2,20}'}),
-        'email': forms.TextInput(attrs={'placeholder': 'example@mail.com', 'pattern': '\w{1,}[-]{0,10}\w{0,}@\w{1,}[-]{0,3}\w{0,}\.\w{1,}'}),
+        'travel_doc_name': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '[A-z]{2,20} [A-z]{2,20}[ ]{0,1}[A-z]{0,20}'}),
+        'email': forms.TextInput(attrs={'placeholder': 'example@mail.com', 'pattern': '[A-z.]{1,}[-.]{0,10}[A-z.]{0,}@\w{1,}[-.]{0,3}\w{0,}\.\w{1,}'}),
         'address': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '.{2,80}'}),
         'contact_number': forms.TextInput(attrs={'placeholder': '+1XXXXXXXXXX', 'pattern': '\+\d{10,19}'}),
         'country': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '.{2,45}'}),
@@ -88,8 +88,8 @@ class EducationEn(forms.ModelForm):
         'memo': 'Memo',
         }
         widgets = {
-        'travel_doc_name': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '[A-z]{2,20} [A-z]{2,20} [A-z]{2,20}'}),
-        'email': forms.TextInput(attrs={'placeholder': 'example@mail.com', 'pattern': '\w{1,}[-]{0,10}\w{0,}@\w{1,}[-]{0,3}\w{0,}\.\w{1,}'}),
+        'travel_doc_name': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '[A-z]{2,20} [A-z]{2,20}[ ]{0,1}[A-z]{0,20}'}),
+        'email': forms.TextInput(attrs={'placeholder': 'example@mail.com', 'pattern': '[A-z.]{1,}[-.]{0,10}[A-z.]{0,}@\w{1,}[-.]{0,3}\w{0,}\.\w{1,}'}),
         'citizenship': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '.{2,4}'}),
         'contact_number': forms.TextInput(attrs={'placeholder': '+1XXXXXXXXXX', 'pattern': '\+\d{10,19}'}),
         'country': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '.{2,45}'}),

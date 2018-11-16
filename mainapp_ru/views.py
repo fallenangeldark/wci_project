@@ -6,6 +6,7 @@ from mainapp_ru.models import HomeRu, InnerHomeRu
 from mainapp_ru.forms import ClientAssesmentRu, EducationRu
 from django.views import View
 from django.db.models import Q
+from django.shortcuts import render_to_response
 
 # Create your views here.
 
@@ -196,7 +197,7 @@ class ClientAssesment_ru(View):
         if formset.is_valid():
             formset.save()
             print('THIS IS SAVE')
-            return HttpResponseRedirect('/ru/education')
+            return HttpResponseRedirect('/ru/redirect')
         else :
             print('THIS IS NOT SAVE')
             return render(request, self.template_name, {'formset': formset, 'title': 'Form'})
@@ -220,7 +221,7 @@ class Education_ru(View):
         if formset.is_valid():
             formset.save()
             print('THIS IS SAVE')
-            return HttpResponseRedirect('/ru/education')
+            return HttpResponseRedirect('/ru/redirect')
         else :
             print('THIS IS NOT SAVE')
             return render(request, self.template_name, {'formset': formset, 'title': 'Форма "Образование"'})
@@ -259,3 +260,18 @@ class SearchView(View):
         'query': query
         }
         return render(self.request, self.template_name, context)
+
+def redirect_page(request):
+    template_name = 'mainapp_ru/redirect.html'
+    return render(request, 'mainapp_ru/redirect.html')
+
+# Обработка ошибки 404
+
+from django.template import RequestContext
+
+
+
+def handler404(request, template_name="mainapp_en/404.html"):
+    response = render_to_response("mainapp_en/404.html")
+    response.status_code = 404
+    return response
