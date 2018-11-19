@@ -9,9 +9,9 @@ class ClientAssesmentRu(forms.ModelForm):
         fields = '__all__'
 
         labels = {
-        'travel_doc_name': 'ФИО* ',
+        'travel_doc_name': 'Фамили Имя Отчество* ',
         'email': 'Email* ',
-        'address': 'Адресс ',
+        'address': 'Адрес ',
         'contact_number': 'Контактный номер* ',
         'marital_status': 'Семейное положение* ',
         'country': 'Страна проживания* ',
@@ -36,10 +36,10 @@ class ClientAssesmentRu(forms.ModelForm):
         'memo': 'Дополнительная информация',
         }
         widgets = {
-        'travel_doc_name': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '.{10,60}'}),
+        'travel_doc_name': forms.TextInput(attrs={'placeholder': 'Иванов Иван Иванович', 'pattern': '.{10,60}'}),
         'email': forms.TextInput(attrs={'placeholder': 'example@mail.com', 'pattern': '[A-z.]{1,}[-.]{0,10}[A-z.]{0,}@\w{1,}[-.]{0,3}\w{0,}\.\w{1,}'}),
         'address': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '.{10,80}'}),
-        'contact_number': forms.TextInput(attrs={'placeholder': '+7XXXXXXXXXX или +380XXXXXXXXX и т.д.', 'pattern': '\+\d{10,19}'}),
+        'contact_number': forms.TextInput(attrs={'placeholder': '+7XXXXXXXXXX или +380XXXXXXXXX, др.', 'pattern': '\+\d{10,19}'}),
         'country': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '.{2,45}'}),
         'dob': forms.DateInput(attrs={'placeholder': 'дд.мм.гггг', 'pattern': '(([0-2]{1}[0-9]{1})|([3][0-1]))\.((0{1}[0-9]{1})|(1{1}[0-2]{1}))\.((19[3-9][0-9])|(20[0-1][1-8]))'}),
         'school_progr_name':forms.Textarea(attrs={'placeholder': ' ', 'pattern': '.{5,80}'}),
@@ -68,7 +68,7 @@ class EducationRu(forms.ModelForm):
         fields = '__all__'
 
         labels = {
-        'travel_doc_name': 'ФИО* ',
+        'travel_doc_name': 'Фамили Имя Отчество* ',
         'email': 'Email* ',
         'contact_number': 'Контактный номер* ',
         'citizenship': 'Гражданство* ',
@@ -87,15 +87,15 @@ class EducationRu(forms.ModelForm):
         'memo': 'Дополнительная информация',
         }
         widgets = {
-        'travel_doc_name': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '[A-z]{2,20} [A-z]{2,20} [A-z]{2,20}'}),
+        'travel_doc_name': forms.TextInput(attrs={'placeholder': 'Иванов Иван Иванович', 'pattern': '[A-z]{2,20} [A-z]{2,20} [A-z]{2,20}'}),
         'email': forms.TextInput(attrs={'placeholder': 'example@mail.com', 'pattern': '[A-z.]{1,}[-.]{0,10}[A-z.]{0,}@\w{1,}[-.]{0,3}\w{0,}\.\w{1,}'}),
         'citizenship': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '.{2,4}'}),
-        'contact_number': forms.TextInput(attrs={'placeholder': '+7XXXXXXXXXX or +1XXXXXXXXXX etc.', 'pattern': '\+\d{10,19}'}),
+        'contact_number': forms.TextInput(attrs={'placeholder': '+7XXXXXXXXXX или +380XXXXXXXXX, др.', 'pattern': '\+\d{10,19}'}),
         'country': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '.{2,45}'}),
-        'dob': forms.DateInput(attrs={'placeholder': 'dd.mm.yyyy', 'pattern': '(([0-2]{1}[0-9]{1})|([3][0-1]))\.((0{1}[0-9]{1})|(1{1}[0-2]{1}))\.((19[3-9][0-9])|(20[0-1][1-8]))'}),
+        'dob': forms.DateInput(attrs={'placeholder': 'дд.мм.гггг', 'pattern': '(([0-2]{1}[0-9]{1})|([3][0-1]))\.((0{1}[0-9]{1})|(1{1}[0-2]{1}))\.((19[3-9][0-9])|(20[0-1][1-8]))'}),
         'school_progr_name':forms.Textarea(attrs={'placeholder': ' ', 'pattern': '.{5,80}'}),
         'en_fr_cert': forms.Textarea(attrs={'placeholder': ' ', 'pattern': '.{1,120}'}),
-        'plan_date': forms.DateInput(attrs={'placeholder': 'dd.mm.yyyy', 'pattern': '(([0-2]{1}[0-9]{1})|([3][0-1]))\.((0{1}[0-9]{1})|(1{1}[0-2]{1}))\.((20[1][8-9])|(20[2][1-9]))'}),
+        'plan_date': forms.DateInput(attrs={'placeholder': 'дд.мм.гггг', 'pattern': '(([0-2]{1}[0-9]{1})|([3][0-1]))\.((0{1}[0-9]{1})|(1{1}[0-2]{1}))\.((20[1][8-9])|(20[2][1-9]))'}),
         'pref_province': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '.{2,40}'}),
         'plan_budget': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '\d{1,10}'}),
         'visa_rejected': forms.RadioSelect(attrs={'class': 'radio'}),

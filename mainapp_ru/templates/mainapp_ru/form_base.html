@@ -19,9 +19,9 @@
   </ul>
 {% endblock %}
 {% block content %}
-<h1 class='center first'>Форма оценки клиента</h1>
+<h1 class='center'><a href="{% url 'mainapp_ru:client_assesment_form' %}" class="this">Форма оценки клиента</a></h1>
 <p class=''>Заполните <a href="{% url 'mainapp_ru:client_assesment_form' %}" class="this">данную</a> форму для получения возможности иммигрировать в Канаду</p>
-<h1 class='center'>Заявка на обучение</h1>
+<h1 class='center'><a href="{% url 'mainapp_ru:education_form' %}" class="this">Заявка на обучение</a></h1>
 <p class=''>Заполните <a href="{% url 'mainapp_ru:education_form' %}" class="this">данную</a> форму для уточнения возможности получить образование в Канаде</p>
 {% endblock %}
 {% block review %}

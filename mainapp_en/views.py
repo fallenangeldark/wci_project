@@ -233,6 +233,14 @@ class SearchView(View):
         query = self.request.GET.get('q')
         list_class_items = ['h1', 'paragraph1','paragraph2','paragraph3','paragraph4','paragraph5','paragraph6','paragraph7','paragraph8','paragraph9','paragraph10','paragraph11','paragraph12','paragraph13']
 
+        if query == '' or query == None:
+            context = {
+            'count': '0',
+            'title': 'Search',
+            'query': query
+            }
+            return render(self.request, self.template_name, context)
+
         founded_articles = HomeEn.objects.filter(Q(h1__icontains=query)|Q(paragraph1__icontains=query)|Q(paragraph2__icontains=query)|Q(paragraph3__icontains=query)|Q(paragraph4__icontains=query)|Q(paragraph5__icontains=query)|Q(paragraph6__icontains=query)|Q(paragraph7__icontains=query)|Q(paragraph8__icontains=query)|Q(paragraph9__icontains=query)|Q(paragraph10__icontains=query)|Q(paragraph11__icontains=query)|Q(paragraph12__icontains=query)|Q(paragraph13__icontains=query))
         founded_inner_articles =  InnerHomeEn.objects.filter(Q(h1__icontains=query)|Q(paragraph1__icontains=query)|Q(paragraph2__icontains=query)|Q(paragraph3__icontains=query)|Q(paragraph4__icontains=query)|Q(paragraph5__icontains=query)|Q(paragraph6__icontains=query)|Q(paragraph7__icontains=query)|Q(paragraph8__icontains=query)|Q(paragraph9__icontains=query)|Q(paragraph10__icontains=query)|Q(paragraph11__icontains=query)|Q(paragraph12__icontains=query)|Q(paragraph13__icontains=query))
         links_founded_articles = []

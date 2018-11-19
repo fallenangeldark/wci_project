@@ -12,7 +12,7 @@
   <script src='https://www.google.com/recaptcha/api.js?hl=en' async defer></script>
 {% endblock %}
 {% block content %}
-<h1 class='form-h1'>Clien Assesment Form</h1>
+<h1 class='form-h1'>Client Assesment Form</h1>
 <hr>
 <p class='form-p'>Fill out this form to find out if you're qualified to immigrate to Canada</p>
 <form method="post" action="" id="clientForm">
@@ -64,7 +64,6 @@ function borderChange(e){
     maritalStList[i].style.display = 'none';
     maritalStList[i].previousElementSibling.style.display = 'none';
     maritalStList[i].previousElementSibling.previousElementSibling.style.display = 'none';
-    console.log('kek')
 };
   console.log(maritalSt[0].selected);
 
@@ -74,7 +73,6 @@ function borderChange(e){
         maritalStList[i].style.display = 'block';
         maritalStList[i].previousElementSibling.style.display = 'block';
         maritalStList[i].previousElementSibling.previousElementSibling.style.display = 'inline-block';
-        console.log('kek1');
       }
     }
     else{
@@ -82,7 +80,6 @@ function borderChange(e){
         maritalStList[i].style.display = 'none';
         maritalStList[i].previousElementSibling.style.display = 'none';
         maritalStList[i].previousElementSibling.previousElementSibling.style.display = 'none';
-        console.log('kek');
       }
     }
   }
