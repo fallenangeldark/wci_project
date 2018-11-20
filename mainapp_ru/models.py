@@ -8,18 +8,18 @@ from phonenumber_field.modelfields import PhoneNumberField
 # Create your models here.
 
 CHOICE_YES_NO = (
-('Y', 'Yes'),
-('N', 'No'),
+('Y', 'Есть'),
+('N', 'Нету'),
 )
 CHOICE_LANG_EN_LEVEL = (
-('0','Please Choose...'),
+('0','Выбрать...'),
 ("1", "Beginner"),
 ("2", "Intermediate"),
 ("3", "Advanced"),
 ("4", "Fluent"),
 )
 CHOICE_LANG_LEVEL = (
-('0','Please Choose...'),
+('0','Выбрать...'),
 ("1", "Not applicable"),
 ("2", "Beginner"),
 ("3", "Intermediate"),

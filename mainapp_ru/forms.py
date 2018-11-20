@@ -36,7 +36,7 @@ class ClientAssesmentRu(forms.ModelForm):
         'memo': 'Дополнительная информация',
         }
         widgets = {
-        'travel_doc_name': forms.TextInput(attrs={'placeholder': 'Иванов Иван Иванович', 'pattern': '.{10,60}'}),
+        'travel_doc_name': forms.TextInput(attrs={'placeholder': 'Иванов Иван Иванович', 'pattern': '[Ё-ё]{2,20} [Ё-ё]{2,20} [Ё-ё]{2,20}'}),
         'email': forms.TextInput(attrs={'placeholder': 'example@mail.com', 'pattern': '[A-z.]{1,}[-.]{0,10}[A-z.]{0,}@\w{1,}[-.]{0,3}\w{0,}\.\w{1,}'}),
         'address': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '.{10,80}'}),
         'contact_number': forms.TextInput(attrs={'placeholder': '+7XXXXXXXXXX или +380XXXXXXXXX, др.', 'pattern': '\+\d{10,19}'}),
@@ -87,7 +87,7 @@ class EducationRu(forms.ModelForm):
         'memo': 'Дополнительная информация',
         }
         widgets = {
-        'travel_doc_name': forms.TextInput(attrs={'placeholder': 'Иванов Иван Иванович', 'pattern': '[A-z]{2,20} [A-z]{2,20} [A-z]{2,20}'}),
+        'travel_doc_name': forms.TextInput(attrs={'placeholder': 'Иванов Иван Иванович', 'pattern': '[Ё-ё]{2,20} [Ё-ё]{2,20} [Ё-ё]{2,20}'}),
         'email': forms.TextInput(attrs={'placeholder': 'example@mail.com', 'pattern': '[A-z.]{1,}[-.]{0,10}[A-z.]{0,}@\w{1,}[-.]{0,3}\w{0,}\.\w{1,}'}),
         'citizenship': forms.TextInput(attrs={'placeholder': ' ', 'pattern': '.{2,4}'}),
         'contact_number': forms.TextInput(attrs={'placeholder': '+7XXXXXXXXXX или +380XXXXXXXXX, др.', 'pattern': '\+\d{10,19}'}),
