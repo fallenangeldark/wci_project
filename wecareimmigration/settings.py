@@ -26,7 +26,7 @@ with open('/etc/s_key.txt') as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['194.58.122.251', '.wecareimmigration.net']
+ALLOWED_HOSTS = ['194.58.122.251', '.wecareimmigration.net', '127.0.0.1']
 
 
 # Application definition
