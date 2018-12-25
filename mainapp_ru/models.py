@@ -148,6 +148,12 @@ class ClientAssesment(models.Model):
     sibling_in_canada = models.CharField(max_length=3, choices=CHOICE_YES_NO, default='N')
     memo = models.TextField(blank=True)
 
+    class Meta():
+        verbose_name_plural = "Заявки на иммиграцию"
+
+    def __str__(self):
+        return self.name
+
 class Education(models.Model):
 
     CHOICE_MARITAL_STATUS = (
@@ -193,3 +199,9 @@ class Education(models.Model):
     plan_budget = models.CharField(max_length=15, blank=False)
     visa_rejected = models.CharField(max_length=3, choices=CHOICE_YES_NO, default='N')
     memo = models.TextField(blank=True)
+
+    class Meta():
+        verbose_name_plural = "Заявки на обучение"
+
+    def __str__(self):
+        return self.name
