@@ -100,7 +100,7 @@ DATABASES = {
     	'USER': 'balaba',
     	'PASSWORD': 'datawith1balaba',
     	'HOST': 'localhost',
-    	'PORT': '',
+    	'PORT': '5432',
     }
 }
 
@@ -147,3 +147,5 @@ STATICFILES_DIRS = (
 STATIC_ROOT = (os.path.join(BASE_DIR, 'static'))
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
