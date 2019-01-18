@@ -6,6 +6,7 @@
     <span class="lang first {% if '/en/' in request.get_full_path %}active_lang{% endif %}"><a href="javascript:void(0);" onClick="javascript:getLang_en();">En</a></span>
 </header>
 <div class="banner"></div>
+<a href="{% url 'mainapp_en:home' %}"><div class="logo"></div></a>
 <nav>
   <ul class="menu">
     <li><a href="{% url 'mainapp_en:home' %}" class="{% if 'education' in request.get_full_path %}active{% endif %} %}">Education</a></li>
@@ -13,9 +14,47 @@
     <li><a href="{% url 'mainapp_en:life' %}" class="{% if 'life' in request.get_full_path %}active{% endif %}">Life in Canada</a></li>
     <li><a href="{% url 'mainapp_en:about' %}" class="{% if 'about' in request.get_full_path %}active{% endif %}">About us</a></li>
     <li><a href="{% url 'mainapp_en:forms'  %}" class="{% if 'forms' in request.get_full_path %}active{% endif %}">Forms</a></li>
+    <li class="fa"><p id="toggle"></p></li>
     <form class="menu_search" action="{% url 'mainapp_en:search_view' %}" method="GET">
       <p><input type="search" name="q" placeholder="Search">
         <input type="submit" value="Search"></p>
     </form>
   </ul>
 </nav>
+<script>
+  var elem = document.getElementById('toggle');
+  console.log(elem);
+  
+  elem.addEventListener('click', showMenu)
+  
+  function showMenu(){
+    var menu = document.getElementsByClassName('menu');
+    menu = menu[0];
+    console.log(menu.children);
+    for(i=0; i<5; i++){
+      var topEl = 46 + 26*i
+      menu.children[i].style.display = 'inline-block';
+      menu.children[i].style.position = 'absolute';
+      menu.children[i].style.top = topEl+'px';
+      menu.children[i].style.left = '0';
+      
+      menu.children[i].style.width = '107%';
+      menu.children[i].style.height = '26px';
+      menu.children[i].style.textAlign = 'center';
+      menu.children[i].children[0].style.backgroundColor = '#595959';
+      menu.children[i].style.backgroundColor = '#595959';
+      menu.children[i].style.zIndex = '1';
+    }
+  elem.removeEventListener('click', showMenu)
+  elem.addEventListener('click', hideMenu)
+  }
+  function hideMenu(){
+    var menu = document.getElementsByClassName('menu')
+    menu = menu[0]
+    for(i=0; i<5; i++){
+      menu.children[i].style.display = 'none'
+    }
+  elem.removeEventListener('click', hideMenu)
+  elem.addEventListener('click', showMenu)
+  }
+</script>

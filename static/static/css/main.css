@@ -69,9 +69,9 @@ html, body {
 .banner {
     background-color: #aaa;
     /* width: auto; */
-    height: 16em;
+    height: 10em;
     /* background: transparent; */
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 32%,rgba(0,0,0,0) 97%,rgba(245,245,245,0.9) 99%,rgba(245,245,245,1) 100%), url('../img/Canada-Alberta-Banff-national-Park-winter-forest-river-stream-snow_1920x12004.jpg');
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 32%,rgba(0,0,0,0) 97%,rgba(245,245,245,0.9) 99%,rgba(245,245,245,1) 100%), url('../img/Canada-Alberta-Banff-national-Park_mirror.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
@@ -185,6 +185,10 @@ nav a:hover{
 .clr {
     clear: both;
 }
+.clr_bottom {
+    clear: both;
+    padding-top: 5em;
+}
 .left-side{
     width: 35%;
     display: block;
@@ -197,7 +201,7 @@ nav a:hover{
     list-style: none;
 }
 .left-side ul li{
-    margin-bottom: .7em;
+    padding-top: .7em;
 }
 .left-side ul li a{
     text-decoration: none;
@@ -528,4 +532,149 @@ div.footer {
     color: #777;
     font-size: .8em;
 
+}
+.logo {
+  position:absolute;
+  background-image: url(/static/img/wci_logo.png);
+  background-color: transparent;
+  top: 3em;
+  left: 4em;
+  width: 180px;
+  height: 113px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/*
+.fa {
+  display: none;
+}
+*/
+
+@media only screen and (max-width: 480px) {
+  *{
+    font-size: .96em;
+  }
+  .banner {
+    display: none;
+  } 
+  nav ul {
+    margin-left: 0;
+    padding: 0;
+  }
+  nav>ul>li, .header {
+    display: none;
+    margin: 0;
+  }
+  form.menu_search {
+    margin: 0em -7px -2em 4.3em;
+    position: absolute;
+    top: 1.5em;
+    left: -2em;
+    border-color: #555;
+  }
+  form {
+    min-height: 0;
+    padding-bottom: 0;
+    background-color: #555;
+
+  }
+  form p{
+    background-color: #555;
+    margin-left: 5em;
+    
+  }
+/*
+  form:before{
+    content: "";
+        background-image: url(/static/img/select-arrow-open2.png);
+    width: 60px;
+    
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+}
+*/
+  
+  form.menu_search input[type="submit"]{
+    border: 2px solid #8c8c8c;
+    border-radius: 10px;
+    background: #fff;
+    outline: none;
+    width: 5em;
+    height: 1.5em;
+    box-shadow: 0 0;    
+  }
+  .fa{
+    color: #929292;
+    width: 480px;
+    display: block;
+    background-color: #555;
+    height: 25px;
+    text-align: right;
+    padding: 1em;
+/*    font-size: .8em;*/
+  }  
+  .fa p{
+color: #929292;
+width: 80px;
+display: block;
+background-color: #555;
+text-align: right;
+font-size: .8em;
+height: 46px;
+float: right;
+margin: 0;
+padding: 0;
+position: relative;
+top: -15px;
+right: -15px;
+  }
+ .fa p:before{
+    content: "\f0c9";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    font-size: 18px;
+    padding-right: 0.5em;
+    position: absolute;
+    top: 1em;
+    left: 39%;
+  } 
+  .fa p:hover{
+    color:#d33939;
+    cursor: pointer;
+  }
+
+  .logo {
+  position:absolute;
+  background-image: url(/static/img/wci_logo.png);
+  background-color: transparent;
+  top: .8em;
+  left: 1em;
+  width: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+form.menu_search input[type=search]{
+    width: 11em;
+    border-radius: 10px;
+    text-indent: .6em;
+    padding-right: .6em;
+
+}
+  h1 {
+    margin-top: 0;
+    text-indent: 0;
+  }
+  ul li a:hover {
+    color: #d33939;
+  }  
+  nav ul li .active {
+    color: #d33939;
+  }
+  nav ul li a::after{
+    background-color: #d33939;
+  }
 }
